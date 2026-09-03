@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerBoost AI - HR Interview Practice</title>
+    <meta name="description" content="Practice 100 universal HR interview questions with sample answers and interview tips.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .dark p {
+            color: #cbd5e1;
+        }
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
+            color: #f8fafc;
+        }
+
+        .dark input,
+        .dark textarea,
+        .dark select {
+            color: #f8fafc;
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: #94a3b8;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.88);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.18);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        .sample-answer {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .tip-box {
+            border-left: 4px solid #10b981;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 antialiased">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="sticky top-0 z-50 border-b border-gray-200 dark:border-slate-700 glass-nav">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-16">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center gap-2">
+
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                    <i class="fas fa-rocket"></i>
+                </div>
+
+                <span class="font-bold text-xl text-gray-900 dark:text-white">
+                    CareerBoost<span class="text-blue-600">AI</span>
+                </span>
+
+            </a>
+
+            <!-- Desktop Navigation -->
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+
+                <a href="index.html"
+                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    Home
+                </a>
+
+                <a href="resume-new.html"
+                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    Resume Builder
+                </a>
+
+                <a href="jobs.html"
+                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    Jobs
+                </a>
+
+                <a href="index.html#ai-tools"
+                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    AI Tools
+                </a>
+
+                <a href="index.html#learn"
+                   class="text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    Learn
+                </a>
+
+                <a href="interview.html"
+                   class="text-blue-600 dark:text-blue-400 font-semibold">
+                    Interview
+                </a>
+
+            </div>
+
+            <!-- Right Controls -->
+
+            <div class="flex items-center gap-3">
+
+                <button id="theme-toggle"
+                        class="w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+
+                    <i id="theme-icon" class="fas fa-moon"></i>
+
+                </button>
+
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 flex items-center justify-center">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+
+            <div class="flex flex-col gap-3 pt-3">
+
+                <a href="index.html">Home</a>
+                <a href="resume-new.html">Resume Builder</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="index.html#ai-tools">AI Tools</a>
+                <a href="index.html#learn">Learn</a>
+                <a href="interview.html" class="text-blue-600">Interview</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="py-12 md:py-16">
+
+    <div class="max-w-5xl mx-auto px-4 text-center">
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-semibold mb-5">
+
+            <i class="fas fa-comments"></i>
+
+            HR Interview Practice
+
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+
+            Master Your
+            <span class="text-blue-600">HR Interview</span>
+
+        </h1>
+
+        <p class="mt-5 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+
+            Practice 100 universal HR interview questions,
+            write your own answers, and compare them with
+            concise sample answers and practical interview tips.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="max-w-5xl mx-auto px-4 pb-16">
+
+
+    <!-- FILTERS -->
+
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-5 mb-6 shadow-sm">
+
+        <div class="grid md:grid-cols-3 gap-4">
+
+            <div>
+
+                <label class="block text-sm font-semibold mb-2">
+                    Category
+                </label>
+
+                <select id="category-filter"
+                        class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+
+                    <option value="all">All Categories</option>
+
+                    <option value="Introduction & Personality">
+                        Introduction & Personality
+                    </option>
+
+                    <option value="Career & Motivation">
+                        Career & Motivation
+                    </option>
+
+                    <option value="Fresher / Entry-Level">
+                        Fresher / Entry-Level
+                    </option>
+
+                    <option value="Teamwork & Communication">
+                        Teamwork & Communication
+                    </option>
+
+                    <option value="Behavioral">
+                        Behavioral
+                    </option>
+
+                    <option value="Situational">
+                        Situational
+                    </option>
+
+                    <option value="Job, Salary & Closing">
+                        Job, Salary & Closing
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label class="block text-sm font-semibold mb-2">
+                    Difficulty
+                </label>
+
+                <select id="difficulty-filter"
+                        class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none">
+
+                    <option value="all">All Difficulties</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="flex items-end">
+
+                <button id="random-btn"
+                        class="w-full py-3 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition">
+
+                    <i class="fas fa-shuffle mr-2"></i>
+                    Random Question
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="mb-4">
+
+        <div class="flex items-center justify-between text-sm mb-2">
+
+            <span id="progress-text"
+                  class="font-semibold text-gray-600 dark:text-gray-300">
+                Question 1 / 100
+            </span>
+
+            <span id="answered-text"
+                  class="text-gray-500 dark:text-gray-400">
+                Answered: 0
+            </span>
+
+        </div>
+
+        <div class="w-full h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+
+            <div id="progress-bar"
+                 class="h-full bg-blue-600 transition-all duration-300"
+                 style="width:1%">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUESTION CARD -->
+
+    <section id="question-card"
+             class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-sm overflow-hidden fade-in">
+
+
+        <!-- Question Header -->
+
+        <div class="p-6 md:p-8 border-b border-gray-200 dark:border-slate-700">
+
+            <div class="flex flex-wrap items-center gap-2 mb-5">
+
+                <span id="category-badge"
+                      class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                    Introduction & Personality
+                </span>
+
+                <span id="difficulty-badge"
+                      class="px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300">
+                    Easy
+                </span>
+
+            </div>
+
+
+            <div class="flex gap-4">
+
+                <div class="hidden sm:flex flex-shrink-0 w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 items-center justify-center">
+
+                    <i class="fas fa-question"></i>
+
+                </div>
+
+                <div>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        Interview Question
+                    </p>
+
+                    <h2 id="question-text"
+                        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
+
+                        Tell me about yourself.
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Answer Area -->
+
+        <div class="p-6 md:p-8">
+
+            <label class="block text-sm font-bold mb-2">
+                Your Answer
+            </label>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                First try answering in your own words. Keep it natural and relevant to the job.
+            </p>
+
+            <textarea id="answer-input"
+                      class="w-full rounded-xl border border-gray-300 dark:border-slate-600 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Write your answer here..."></textarea>
+
+
+            <div class="flex flex-wrap gap-3 mt-4">
+
+                <button id="save-btn"
+                        class="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition">
+
+                    <i class="fas fa-check mr-2"></i>
+                    Save Answer
+
+                </button>
+
+                <button id="sample-btn"
+                        class="px-5 py-3 rounded-xl border border-gray-300 dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-700 font-semibold transition">
+
+                    <i class="fas fa-eye mr-2"></i>
+                    Show Sample Answer
+
+                </button>
+
+            </div>
+
+
+            <!-- Save Message -->
+
+            <div id="save-message"
+                 class="hidden mt-4 p-3 rounded-xl bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-sm font-medium">
+
+                <i class="fas fa-circle-check mr-2"></i>
+                Your answer has been saved for this question.
+
+            </div>
+
+
+            <!-- Sample Answer -->
+
+            <div id="sample-container"
+                 class="hidden mt-6">
+
+                <div class="sample-answer bg-blue-50 dark:bg-blue-900/20 p-5 rounded-xl">
+
+                    <h3 class="font-bold text-blue-700 dark:text-blue-300 mb-2">
+
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Sample Answer
+
+                    </h3>
+
+                    <p id="sample-answer"
+                       class="text-gray-700 dark:text-gray-200 leading-relaxed">
+                    </p>
+
+                </div>
+
+
+                <div class="tip-box bg-green-50 dark:bg-green-900/20 p-5 rounded-xl mt-4">
+
+                    <h3 class="font-bold text-green-700 dark:text-green-300 mb-2">
+
+                        <i class="fas fa-user-tie mr-2"></i>
+                        Interview Tip
+
+                    </h3>
+
+                    <p id="interview-tip"
+                       class="text-gray-700 dark:text-gray-200 leading-relaxed">
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <div class="px-6 md:px-8 py-5 bg-gray-50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-slate-700">
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-between">
+
+                <button id="prev-btn"
+                        class="px-5 py-3 rounded-xl border border-gray-300 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-800 font-semibold transition">
+
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Previous
+
+                </button>
+
+
+                <button id="next-btn"
+                        class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition">
+
+                    Next Question
+                    <i class="fas fa-arrow-right ml-2"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFO -->
+
+    <div class="grid md:grid-cols-3 gap-4 mt-8">
+
+        <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5">
+
+            <i class="fas fa-pen-to-square text-blue-600 text-xl mb-3"></i>
+
+            <h3 class="font-bold mb-1">
+                Answer First
+            </h3>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                Try answering yourself before viewing the sample answer.
+            </p>
+
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5">
+
+            <i class="fas fa-comments text-indigo-600 text-xl mb-3"></i>
+
+            <h3 class="font-bold mb-1">
+                Speak Naturally
+            </h3>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                Don't memorize answers word-for-word. Use your own experience.
+            </p>
+
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5">
+
+            <i class="fas fa-repeat text-green-600 text-xl mb-3"></i>
+
+            <h3 class="font-bold mb-1">
+                Practice Regularly
+            </h3>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                Practice different categories to become interview-ready.
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="border-t border-gray-200 dark:border-slate-700 py-8">
+
+    <div class="max-w-7xl mx-auto px-4 text-center">
+
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+
+            © 2026 CareerBoost AI. Built to help students and freshers grow.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const questions = [
+
+/* ================= INTRODUCTION & PERSONALITY ================= */
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "Tell me about yourself.",
+    answer: "Give a short professional introduction covering your education or experience, key skills, strengths, and what type of opportunity you are looking for.",
+    tip: "Keep your answer around 60–90 seconds. Do not tell your entire life story."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "How would you describe yourself?",
+    answer: "Describe yourself using 2–3 professional qualities such as responsible, adaptable, hardworking, organized, or a quick learner, and briefly support them with an example.",
+    tip: "Choose qualities that are relevant to the job rather than using too many adjectives."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "What are your greatest strengths?",
+    answer: "Mention two or three genuine strengths and explain how they help you perform effectively at work.",
+    tip: "Avoid simply listing strengths. Give a small example whenever possible."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "What is your biggest weakness?",
+    answer: "Mention a genuine but manageable weakness and explain what you are doing to improve it.",
+    tip: "Never say you have no weaknesses. Show self-awareness and improvement."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "What motivates you?",
+    answer: "Talk about factors such as learning, achieving goals, solving problems, taking responsibility, or contributing to a team.",
+    tip: "Connect your motivation with the role you are applying for."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "How do you handle stress?",
+    answer: "I stay organized, prioritize important tasks, break large tasks into smaller steps, and remain focused instead of reacting emotionally.",
+    tip: "Show that you have a practical method for handling pressure."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "What are three words that describe you?",
+    answer: "Choose three professional qualities that genuinely represent you and briefly explain why you chose them.",
+    tip: "Pick qualities you can prove through your actions."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "What makes you different from other candidates?",
+    answer: "Highlight your combination of skills, attitude, willingness to learn, reliability, and any practical experience or projects you have completed.",
+    tip: "Do not criticize other candidates. Focus on your own value."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "How do you stay motivated when work becomes repetitive?",
+    answer: "I focus on accuracy and consistency, look for ways to improve the process, and set small goals to maintain productivity.",
+    tip: "This is especially useful for roles involving routine work."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Hard",
+    question: "How would your friends or colleagues describe you?",
+    answer: "They would likely describe me as dependable, approachable, and someone who takes responsibilities seriously.",
+    tip: "Choose qualities that match your real behavior."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "What is something you are proud of?",
+    answer: "Describe an achievement, project, improvement, or personal milestone and explain what you learned from it.",
+    tip: "The achievement does not need to be huge. Focus on the effort and learning."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Easy",
+    question: "What do you enjoy doing outside work or studies?",
+    answer: "Mention genuine hobbies or activities that show positive qualities such as discipline, creativity, learning, teamwork, or curiosity.",
+    tip: "Be honest. Interviewers may ask follow-up questions."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "How do you define success?",
+    answer: "Success means continuously improving, achieving meaningful goals, becoming dependable in my work, and creating value for the organization.",
+    tip: "Avoid defining success only through money or job title."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Hard",
+    question: "What kind of person are you at work?",
+    answer: "I try to be dependable, professional, open to feedback, and willing to take responsibility for my work.",
+    tip: "Show maturity and professionalism."
+},
+
+{
+    category: "Introduction & Personality",
+    difficulty: "Medium",
+    question: "What personal quality are you currently trying to improve?",
+    answer: "Mention one quality or habit you are actively improving and explain the steps you are taking.",
+    tip: "This question tests self-awareness. Show progress, not perfection."
+},
+
+
+/* ================= CAREER & MOTIVATION ================= */
+
+{
+    category: "Career & Motivation",
+    difficulty: "Easy",
+    question: "Why do you want this job?",
+    answer: "Explain that the role matches your skills and interests and provides an opportunity to learn, contribute, and grow professionally.",
+    tip: "Connect your answer directly to the job description."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Easy",
+    question: "Why do you want to work for our company?",
+    answer: "Mention something positive about the company's work, culture, products, reputation, or growth and explain why it interests you.",
+    tip: "Research the company before the interview."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "Where do you see yourself in five years?",
+    answer: "I want to become highly skilled in my field, take on greater responsibilities, and contribute meaningfully to the organization.",
+    tip: "Show ambition but keep your answer realistic."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What are your short-term career goals?",
+    answer: "My short-term goal is to strengthen my practical skills, understand the role deeply, and become a reliable contributor to the team.",
+    tip: "Focus on skills and contribution."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What are your long-term career goals?",
+    answer: "My long-term goal is to build strong expertise, take greater responsibility, and eventually contribute at a higher professional level.",
+    tip: "Avoid giving an overly specific title unless it makes sense for the role."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Easy",
+    question: "Why did you choose this career field?",
+    answer: "Explain what attracted you to the field and how your education, interests, skills, or experiences support that choice.",
+    tip: "Make the answer personal and genuine."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What do you expect from your first job?",
+    answer: "I expect an opportunity to learn, gain practical experience, take responsibility, and contribute to the organization.",
+    tip: "Do not make the answer only about salary or benefits."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What type of work environment do you prefer?",
+    answer: "I prefer a professional and collaborative environment where people communicate clearly, support each other, and take responsibility.",
+    tip: "Show flexibility instead of sounding demanding."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Hard",
+    question: "What would make you leave a company?",
+    answer: "I value stability, learning, and growth. I would consider leaving only if there was a serious long-term mismatch or no opportunity to contribute and grow.",
+    tip: "Do not complain about previous employers."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What does career growth mean to you?",
+    answer: "Career growth means improving skills, taking on more responsibility, solving more complex problems, and becoming more valuable professionally.",
+    tip: "Growth is more than just getting a promotion."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Easy",
+    question: "What are you looking for in your next opportunity?",
+    answer: "I am looking for a role where I can use my current skills, learn new things, take responsibility, and grow with the organization.",
+    tip: "Keep the answer aligned with the job."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Hard",
+    question: "Why should your career path make sense for this position?",
+    answer: "Explain how your education, skills, projects, previous responsibilities, or interests have prepared you for this particular role.",
+    tip: "Tell a clear story connecting your past to this opportunity."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "What skills do you want to develop next?",
+    answer: "Mention one or two skills directly relevant to the position and explain why improving them matters.",
+    tip: "Choose practical skills instead of listing everything."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Hard",
+    question: "What would make this job meaningful for you?",
+    answer: "Learning, solving useful problems, taking responsibility, and seeing that my work contributes to the team's goals would make the role meaningful.",
+    tip: "Show that you care about contribution."
+},
+
+{
+    category: "Career & Motivation",
+    difficulty: "Medium",
+    question: "Why are you interested in this industry?",
+    answer: "Explain the aspects of the industry that interest you and connect them to your skills, learning goals, and career plans.",
+    tip: "Avoid generic statements like 'this industry has good scope' without explanation."
+},
+
+
+/* ================= FRESHER ================= */
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "Why should we hire you as a fresher?",
+    answer: "Although I am a fresher, I bring a strong willingness to learn, relevant knowledge, discipline, and the ability to adapt quickly.",
+    tip: "Confidence is important. Do not apologize for being a fresher."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "You don't have much experience. Why should we consider you?",
+    answer: "I may not have extensive professional experience yet, but I have developed relevant skills through education, projects, practice, and self-learning.",
+    tip: "Focus on transferable skills."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "What did you learn from your education?",
+    answer: "My education helped me develop subject knowledge, analytical thinking, discipline, and the ability to learn and complete tasks systematically.",
+    tip: "Mention subjects relevant to the position."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "Tell me about a project you worked on.",
+    answer: "Briefly explain the project's objective, your responsibility, the tools or skills used, and the result.",
+    tip: "Be ready for follow-up questions about your exact contribution."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "What did you learn from your project?",
+    answer: "Mention both technical or subject knowledge and soft skills such as planning, communication, problem-solving, or time management.",
+    tip: "Interviewers care about what you learned, not just the project title."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "How do you learn something you don't know?",
+    answer: "I first understand the requirement, research reliable resources, practice the concept, and ask questions when necessary.",
+    tip: "This is a very important answer for freshers."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "What are your expectations from your manager?",
+    answer: "I value clear expectations, constructive feedback, guidance when necessary, and opportunities to take responsibility.",
+    tip: "Show that you can work independently too."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "How will you handle your first few weeks at work?",
+    answer: "I would focus on understanding the company, team, processes, tools, expectations, and responsibilities while asking relevant questions.",
+    tip: "Show that you would observe and learn before making assumptions."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "What would you do if you make a mistake at work?",
+    answer: "I would acknowledge it, understand what caused it, correct it as quickly as possible, and take steps to prevent it from happening again.",
+    tip: "Never suggest hiding mistakes."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "Are you comfortable learning new tools?",
+    answer: "Yes. I understand that tools change, so I am comfortable learning new software and adapting to the company's processes.",
+    tip: "Mention an example if you have one."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "How do you handle a task you have never done before?",
+    answer: "I clarify the expected outcome, learn the process, break the task into steps, and ask for guidance if I get stuck.",
+    tip: "This demonstrates a learning mindset."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Easy",
+    question: "Are you comfortable receiving feedback?",
+    answer: "Yes. I see constructive feedback as an opportunity to identify gaps and improve my performance.",
+    tip: "Give an example if possible."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "What is the most important thing you learned outside college?",
+    answer: "Mention a practical skill, discipline, communication habit, project, course, or experience and explain how it helped you.",
+    tip: "This shows initiative beyond formal education."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Hard",
+    question: "What if we give you a responsibility normally handled by someone more experienced?",
+    answer: "I would take it seriously, clarify expectations, learn what is required, and ask for guidance where appropriate while taking ownership of my part.",
+    tip: "Show confidence without pretending to know everything."
+},
+
+{
+    category: "Fresher / Entry-Level",
+    difficulty: "Medium",
+    question: "What can we expect from you in your first six months?",
+    answer: "You can expect me to learn the role, understand company processes, become increasingly independent, maintain reliability, and contribute to team goals.",
+    tip: "Keep expectations realistic and measurable."
+},
+
+
+/* ================= TEAMWORK & COMMUNICATION ================= */
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Easy",
+    question: "Do you prefer working alone or in a team?",
+    answer: "I am comfortable with both. I can work independently when needed and collaborate effectively when a task requires teamwork.",
+    tip: "Avoid saying you only prefer one."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "Tell me about a time you worked in a team.",
+    answer: "Describe the team goal, your responsibility, how you communicated, and the final result.",
+    tip: "Use a real example from college, projects, internships, or other experiences."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you handle disagreement with a teammate?",
+    answer: "I listen to their perspective, explain my point calmly, focus on facts and the common goal, and try to reach a practical solution.",
+    tip: "Never make the answer about winning the argument."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you communicate with someone who disagrees with you?",
+    answer: "I remain respectful, ask questions to understand their reasoning, and discuss the issue based on facts and objectives.",
+    tip: "Demonstrate emotional maturity."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Easy",
+    question: "What makes a good team member?",
+    answer: "Reliability, communication, accountability, respect for others, willingness to help, and focus on the team's goal.",
+    tip: "Mention both performance and behavior."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "What would you do if a teammate was not contributing?",
+    answer: "I would first understand the reason, communicate with them respectfully, offer help if appropriate, and involve the manager if the issue continues to affect the work.",
+    tip: "Don't immediately complain about the teammate."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you handle communication problems?",
+    answer: "I clarify the requirement, confirm important details, use the appropriate communication channel, and make sure both sides understand the expected outcome.",
+    tip: "Clarification prevents many workplace mistakes."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Easy",
+    question: "Are you comfortable speaking with new people?",
+    answer: "Yes. I may take some time to understand the person or situation, but I communicate professionally and become comfortable quickly.",
+    tip: "If you are naturally introverted, don't pretend otherwise. Show that you can communicate."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you explain a complicated topic to someone?",
+    answer: "I first understand their level of knowledge and then explain the topic using simple language, examples, and step-by-step points.",
+    tip: "Clarity is more important than showing off knowledge."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Hard",
+    question: "What would you do if your manager misunderstood something you said?",
+    answer: "I would respectfully clarify what I meant, provide the relevant information, and make sure the misunderstanding is resolved.",
+    tip: "Stay professional even when the misunderstanding is not your fault."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you handle someone who is difficult to work with?",
+    answer: "I focus on the work, communicate clearly, avoid unnecessary conflict, and try to understand their working style.",
+    tip: "Do not label people negatively."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "What role do you usually take in a team?",
+    answer: "I adapt to what the team needs. I can take responsibility for tasks, coordinate when needed, and support others.",
+    tip: "Show flexibility."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Hard",
+    question: "How would you handle a team member taking credit for your work?",
+    answer: "I would first address the situation professionally and clarify the contributions with facts. If necessary, I would discuss it with the manager.",
+    tip: "Avoid responding emotionally or publicly."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Medium",
+    question: "How do you make sure your work is understood by others?",
+    answer: "I communicate clearly, confirm important requirements, document key information when useful, and encourage questions.",
+    tip: "Good communication includes confirmation, not just speaking."
+},
+
+{
+    category: "Teamwork & Communication",
+    difficulty: "Hard",
+    question: "How do you handle conflict within a team?",
+    answer: "I focus on understanding the issue, separating people from the problem, encouraging respectful discussion, and finding a solution aligned with the team's objective.",
+    tip: "Keep the focus on resolution rather than blame."
+},
+
+
+/* ================= BEHAVIORAL ================= */
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a challenge you faced.",
+    answer: "Use a real situation, explain the challenge, what you did, and what result or lesson came from it.",
+    tip: "A simple college or project example is acceptable for freshers."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you made a mistake.",
+    answer: "Explain the mistake honestly, how you corrected it, and what you changed afterward.",
+    tip: "The learning is more important than the mistake."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you received criticism.",
+    answer: "Explain what the feedback was, how you responded, and how you improved afterward.",
+    tip: "Show that you can accept constructive feedback."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you had to meet a tight deadline.",
+    answer: "Explain how you prioritized tasks, managed your time, communicated if necessary, and completed the work.",
+    tip: "Use the STAR structure: Situation, Task, Action, Result."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you solved a problem.",
+    answer: "Explain the problem, how you analyzed it, what action you took, and the outcome.",
+    tip: "Focus on your personal contribution."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Hard",
+    question: "Tell me about a failure.",
+    answer: "Choose a genuine but appropriate failure, explain what went wrong, what you learned, and how you changed afterward.",
+    tip: "Never blame someone else for the failure."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you showed leadership.",
+    answer: "Describe a situation where you took responsibility, coordinated people or tasks, solved a problem, or helped the team achieve a goal.",
+    tip: "Leadership does not require a formal leadership title."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you helped someone.",
+    answer: "Explain who needed help, what you did, and what happened as a result.",
+    tip: "Choose a genuine example."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Hard",
+    question: "Tell me about a decision you made with limited information.",
+    answer: "Explain how you identified the available facts, considered the risks, made a reasonable decision, and reviewed the result.",
+    tip: "This tests judgment and decision-making."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you had to adapt to change.",
+    answer: "Describe the change, how you responded, what you learned, and how you continued working effectively.",
+    tip: "Show adaptability rather than resistance."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Hard",
+    question: "Tell me about a time you disagreed with someone senior.",
+    answer: "Explain how you respectfully shared your reasoning, listened to their perspective, and supported the final decision professionally.",
+    tip: "Respect is critical in this answer."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you had multiple responsibilities.",
+    answer: "Explain how you prioritized tasks, managed time, communicated deadlines, and completed the important work.",
+    tip: "Mention your prioritization method."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about something you learned quickly.",
+    answer: "Describe the topic or skill, how you learned it, how you practiced, and how you used it.",
+    tip: "Good for demonstrating learning ability."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Hard",
+    question: "Tell me about a situation where you had to take responsibility for a problem.",
+    answer: "Explain what happened, what part you were responsible for, what action you took, and how you prevented a repeat.",
+    tip: "Ownership is highly valued by employers."
+},
+
+{
+    category: "Behavioral",
+    difficulty: "Medium",
+    question: "Tell me about a time you went beyond what was expected.",
+    answer: "Describe a situation where you took an extra step that helped complete the work, support someone, or improve the outcome.",
+    tip: "Don't exaggerate. Use a real example."
+},
+
+
+/* ================= SITUATIONAL ================= */
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you were given an urgent task while already busy?",
+    answer: "I would clarify the priority and deadline, review my existing tasks, reprioritize where necessary, and communicate any realistic timeline concerns.",
+    tip: "Don't simply say yes to everything without considering deadlines."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you didn't understand your manager's instructions?",
+    answer: "I would politely ask clarifying questions and confirm my understanding before starting the task.",
+    tip: "Asking a good question is better than making an avoidable mistake."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if you noticed a serious mistake made by your manager?",
+    answer: "I would verify the information and respectfully bring the issue to the manager's attention with facts.",
+    tip: "Be respectful and focus on the issue, not the person."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you were asked to do something you had never done before?",
+    answer: "I would clarify the expected result, learn the process, attempt it carefully, and ask for guidance if necessary.",
+    tip: "This is a common fresher question."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if two managers gave you conflicting priorities?",
+    answer: "I would explain the conflict clearly and ask them to confirm which task should take priority.",
+    tip: "Never silently guess when priorities conflict."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you were going to miss a deadline?",
+    answer: "I would communicate the issue as early as possible, explain the reason, provide a realistic revised timeline, and prioritize completion.",
+    tip: "Early communication is much better than missing a deadline silently."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if a customer or colleague became angry with you?",
+    answer: "I would remain calm, listen carefully, understand the issue, avoid arguing, and work toward a practical solution.",
+    tip: "Do not respond emotionally."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if you disagreed with a company decision?",
+    answer: "I would respectfully share my concerns through the appropriate channel and, once a decision is made, support the team professionally unless there is an ethical issue.",
+    tip: "This answer shows maturity and professionalism."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you finished your work early?",
+    answer: "I would review my work for accuracy, support teammates if appropriate, or ask whether there are additional priorities I can help with.",
+    tip: "Don't say you would simply wait for the day to end."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you made an error just before submitting important work?",
+    answer: "I would stop, verify the issue, correct it, and inform the relevant person if the error could affect the deadline or outcome.",
+    tip: "Accuracy should come before pretending everything is fine."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if you were asked to do something you believed was unethical?",
+    answer: "I would respectfully raise my concern, seek clarification, and follow the company's appropriate escalation or compliance process.",
+    tip: "Integrity is more important than blindly following instructions."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if your workload suddenly doubled?",
+    answer: "I would prioritize tasks by urgency and impact, clarify deadlines, and communicate if additional support or reprioritization was required.",
+    tip: "Show organization rather than panic."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if your teammate asked you to hide their mistake?",
+    answer: "I would not hide an important mistake. I would encourage them to correct it and involve the appropriate person if necessary.",
+    tip: "Never compromise integrity to protect a teammate."
+},
+
+{
+    category: "Situational",
+    difficulty: "Medium",
+    question: "What would you do if you received a task with an unrealistic deadline?",
+    answer: "I would clarify the priority, estimate the realistic time required, and discuss options for prioritization or additional support.",
+    tip: "Don't simply complain about the deadline."
+},
+
+{
+    category: "Situational",
+    difficulty: "Hard",
+    question: "What would you do if you strongly disagreed with your teammate's approach?",
+    answer: "I would explain my concerns using facts, listen to their reasoning, and choose the approach that best supports the project's objective.",
+    tip: "Focus on the solution rather than proving yourself right."
+},
+
+
+/* ================= JOB, SALARY & CLOSING ================= */
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Easy",
+    question: "What are your salary expectations?",
+    answer: "I am open to a fair salary based on the role, responsibilities, company standards, and my skills. I am also more focused on the right learning and growth opportunity.",
+    tip: "Research the market range before giving a specific number."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Medium",
+    question: "Are you willing to relocate?",
+    answer: "If the role is a good fit, I am open to discussing relocation based on the location and overall opportunity.",
+    tip: "Be honest about your actual flexibility."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Easy",
+    question: "When can you join?",
+    answer: "State your actual availability clearly, such as immediately, after a notice period, or on a specific date.",
+    tip: "Never give a joining date you cannot meet."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Medium",
+    question: "Are you interviewing with other companies?",
+    answer: "Yes, I am exploring suitable opportunities, but I am particularly interested in roles where my skills and career goals are a strong match.",
+    tip: "Be honest without sharing unnecessary details."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Medium",
+    question: "Are you comfortable with flexible working hours?",
+    answer: "I understand that some roles require flexibility, and I am open to discussing the expectations of the position.",
+    tip: "Be truthful about permanent night shifts or other constraints."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Medium",
+    question: "Why should we choose you?",
+    answer: "I bring relevant skills, a strong learning mindset, reliability, and a willingness to take responsibility and contribute to the team.",
+    tip: "Give a confident summary instead of repeating your entire resume."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Hard",
+    question: "If we offered you another role, would you consider it?",
+    answer: "I would consider a role if it matches my skills and career direction, while my preference would be to contribute in the position we are discussing.",
+    tip: "Show flexibility without appearing desperate."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Easy",
+    question: "What questions do you have for us?",
+    answer: "Ask thoughtful questions about the role, team, expectations, training, success metrics, or the next steps in the process.",
+    tip: "Always prepare at least two questions before an interview."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Medium",
+    question: "What would you like us to know that we haven't asked?",
+    answer: "Use this opportunity to briefly highlight an important skill, achievement, project, or quality that is relevant to the position.",
+    tip: "Don't introduce a completely unrelated personal topic."
+},
+
+{
+    category: "Job, Salary & Closing",
+    difficulty: "Hard",
+    question: "Why should we hire you over someone with more experience?",
+    answer: "An experienced candidate may bring more experience, but I can offer strong adaptability, willingness to learn, current knowledge, energy, and commitment to developing quickly.",
+    tip: "Respect experienced candidates. Focus on your own strengths."
+}
+
+];
+
+
+// ============================================================
+// STATE
+// ============================================================
+
+let filteredQuestions = [...questions];
+
+let currentIndex = 0;
+
+const userAnswers = {};
+
+
+// ============================================================
+// ELEMENTS
+// ============================================================
+
+const questionText = document.getElementById("question-text");
+const categoryBadge = document.getElementById("category-badge");
+const difficultyBadge = document.getElementById("difficulty-badge");
+
+const answerInput = document.getElementById("answer-input");
+
+const sampleBtn = document.getElementById("sample-btn");
+const sampleContainer = document.getElementById("sample-container");
+
+const sampleAnswer = document.getElementById("sample-answer");
+const interviewTip = document.getElementById("interview-tip");
+
+const saveBtn = document.getElementById("save-btn");
+const saveMessage = document.getElementById("save-message");
+
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+const randomBtn = document.getElementById("random-btn");
+
+const progressText = document.getElementById("progress-text");
+const progressBar = document.getElementById("progress-bar");
+const answeredText = document.getElementById("answered-text");
+
+const categoryFilter = document.getElementById("category-filter");
+const difficultyFilter = document.getElementById("difficulty-filter");
+
+
+// ============================================================
+// LOAD QUESTION
+// ============================================================
+
+function loadQuestion() {
+
+    if (filteredQuestions.length === 0) {
+
+        questionText.textContent = "No questions found.";
+
+        answerInput.value = "";
+
+        return;
+    }
+
+
+    const question = filteredQuestions[currentIndex];
+
+
+    questionText.textContent = question.question;
+
+    categoryBadge.textContent = question.category;
+
+    difficultyBadge.textContent = question.difficulty;
+
+
+    // Difficulty styling
+
+    difficultyBadge.className =
+        "px-3 py-1 rounded-full text-xs font-semibold";
+
+
+    if (question.difficulty === "Easy") {
+
+        difficultyBadge.classList.add(
+            "bg-green-50",
+            "text-green-700",
+            "dark:bg-green-900/30",
+            "dark:text-green-300"
+        );
+
+    } else if (question.difficulty === "Medium") {
+
+        difficultyBadge.classList.add(
+            "bg-yellow-50",
+            "text-yellow-700",
+            "dark:bg-yellow-900/30",
+            "dark:text-yellow-300"
+        );
+
+    } else {
+
+        difficultyBadge.classList.add(
+            "bg-red-50",
+            "text-red-700",
+            "dark:bg-red-900/30",
+            "dark:text-red-300"
+        );
+
+    }
+
+
+    // Restore answer
+
+    answerInput.value = userAnswers[question.question] || "";
+
+
+    // Hide sample answer
+
+    sampleContainer.classList.add("hidden");
+
+    sampleBtn.innerHTML =
+        '<i class="fas fa-eye mr-2"></i>Show Sample Answer';
+
+
+    // Hide saved message
+
+    saveMessage.classList.add("hidden");
+
+
+    // Progress
+
+    progressText.textContent =
+        `Question ${currentIndex + 1} / ${filteredQuestions.length}`;
+
+
+    const percentage =
+        ((currentIndex + 1) / filteredQuestions.length) * 100;
+
+    progressBar.style.width = `${percentage}%`;
+
+
+    // Answer count
+
+    const answeredCount =
+        Object.values(userAnswers)
+            .filter(answer => answer.trim().length > 0)
+            .length;
+
+    answeredText.textContent =
+        `Answered: ${answeredCount}`;
+
+
+    // Button states
+
+    prevBtn.disabled = currentIndex === 0;
+
+    nextBtn.disabled =
+        currentIndex === filteredQuestions.length - 1;
+
+
+    prevBtn.classList.toggle(
+        "opacity-50",
+        currentIndex === 0
+    );
+
+    nextBtn.classList.toggle(
+        "opacity-50",
+        currentIndex === filteredQuestions.length - 1
+    );
+
+}
+
+
+// ============================================================
+// SAVE ANSWER
+// ============================================================
+
+saveBtn.addEventListener("click", function () {
+
+    if (filteredQuestions.length === 0) return;
+
+    const question = filteredQuestions[currentIndex];
+
+    userAnswers[question.question] =
+        answerInput.value;
+
+
+    saveMessage.classList.remove("hidden");
+
+    updateAnsweredCount();
+
+
+    setTimeout(() => {
+
+        saveMessage.classList.add("hidden");
+
+    }, 2500);
+
+});
+
+
+// ============================================================
+// SHOW SAMPLE ANSWER
+// ============================================================
+
+sampleBtn.addEventListener("click", function () {
+
+    if (sampleContainer.classList.contains("hidden")) {
+
+        const question =
+            filteredQuestions[currentIndex];
+
+        sampleAnswer.textContent =
+            question.answer;
+
+        interviewTip.textContent =
+            question.tip;
+
+        sampleContainer.classList.remove("hidden");
+
+        sampleBtn.innerHTML =
+            '<i class="fas fa-eye-slash mr-2"></i>Hide Sample Answer';
+
+    } else {
+
+        sampleContainer.classList.add("hidden");
+
+        sampleBtn.innerHTML =
+            '<i class="fas fa-eye mr-2"></i>Show Sample Answer';
+
+    }
+
+});
+
+
+// ============================================================
+// NEXT
+// ============================================================
+
+nextBtn.addEventListener("click", function () {
+
+    saveCurrentAnswer();
+
+    if (currentIndex < filteredQuestions.length - 1) {
+
+        currentIndex++;
+
+        loadQuestion();
+
+        scrollToQuestion();
+
+    }
+
+});
+
+
+// ============================================================
+// PREVIOUS
+// ============================================================
+
+prevBtn.addEventListener("click", function () {
+
+    saveCurrentAnswer();
+
+    if (currentIndex > 0) {
+
+        currentIndex--;
+
+        loadQuestion();
+
+        scrollToQuestion();
+
+    }
+
+});
+
+
+// ============================================================
+// RANDOM QUESTION
+// ============================================================
+
+randomBtn.addEventListener("click", function () {
+
+    if (filteredQuestions.length <= 1) return;
+
+
+    const oldIndex = currentIndex;
+
+    let newIndex;
+
+    do {
+
+        newIndex =
+            Math.floor(
+                Math.random() * filteredQuestions.length
+            );
+
+    } while (newIndex === oldIndex);
+
+
+    saveCurrentAnswer();
+
+    currentIndex = newIndex;
+
+    loadQuestion();
+
+    scrollToQuestion();
+
+});
+
+
+// ============================================================
+// FILTER QUESTIONS
+// ============================================================
+
+function applyFilters() {
+
+    const category =
+        categoryFilter.value;
+
+    const difficulty =
+        difficultyFilter.value;
+
+
+    filteredQuestions =
+        questions.filter(question => {
+
+            const categoryMatch =
+                category === "all" ||
+                question.category === category;
+
+            const difficultyMatch =
+                difficulty === "all" ||
+                question.difficulty === difficulty;
+
+
+            return categoryMatch && difficultyMatch;
+
+        });
+
+
+    currentIndex = 0;
+
+    loadQuestion();
+
+}
+
+
+categoryFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+difficultyFilter.addEventListener(
+    "change",
+    applyFilters
+);
+
+
+// ============================================================
+// SAVE CURRENT ANSWER
+// ============================================================
+
+function saveCurrentAnswer() {
+
+    if (filteredQuestions.length === 0) return;
+
+    const question =
+        filteredQuestions[currentIndex];
+
+    userAnswers[question.question] =
+        answerInput.value;
+
+}
+
+
+// ============================================================
+// ANSWER COUNT
+// ============================================================
+
+function updateAnsweredCount() {
+
+    const answeredCount =
+        Object.values(userAnswers)
+            .filter(answer => answer.trim().length > 0)
+            .length;
+
+    answeredText.textContent =
+        `Answered: ${answeredCount}`;
+
+}
+
+
+// ============================================================
+// SCROLL
+// ============================================================
+
+function scrollToQuestion() {
+
+    document
+        .getElementById("question-card")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+}
+
+
+// ============================================================
+// DARK MODE
+// ============================================================
+
+const themeToggle =
+    document.getElementById("theme-toggle");
+
+const themeIcon =
+    document.getElementById("theme-icon");
+
+
+function updateThemeIcon() {
+
+    if (document.documentElement.classList.contains("dark")) {
+
+        themeIcon.className =
+            "fas fa-sun";
+
+    } else {
+
+        themeIcon.className =
+            "fas fa-moon";
+
+    }
+
+}
+
+
+if (
+    localStorage.getItem("careerboost-theme") === "dark"
+) {
+
+    document.documentElement.classList.add("dark");
+
+}
+
+
+updateThemeIcon();
+
+
+themeToggle.addEventListener("click", function () {
+
+    document.documentElement.classList.toggle("dark");
+
+
+    const isDark =
+        document.documentElement.classList.contains("dark");
+
+
+    localStorage.setItem(
+        "careerboost-theme",
+        isDark ? "dark" : "light"
+    );
+
+
+    updateThemeIcon();
+
+});
+
+
+// ============================================================
+// MOBILE MENU
+// ============================================================
+
+const mobileMenuBtn =
+    document.getElementById("mobile-menu-btn");
+
+const mobileMenu =
+    document.getElementById("mobile-menu");
+
+
+mobileMenuBtn.addEventListener("click", function () {
+
+    mobileMenu.classList.toggle("hidden");
+
+});
+
+
+// ============================================================
+// INITIAL LOAD
+// ============================================================
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
