@@ -1,0 +1,534 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Cover Letter Generator | CareerBoost AI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: Inter, Arial, sans-serif;
+        }
+
+        .letter-paper {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <div>
+                <h1 class="text-2xl font-bold">
+                    ðŸš€ CareerBoost AI
+                </h1>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                    AI-Powered Career Platform
+                </p>
+            </div>
+
+            <button
+                id="themeBtn"
+                onclick="toggleDarkMode()"
+                class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                ðŸŒ™
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+        <!-- HERO -->
+        <section class="text-center mb-10">
+
+            <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                âœ¨ AI Career Tool
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                AI Cover Letter Generator
+            </h2>
+
+            <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+                Create a professional, job-specific cover letter in seconds.
+                Enter your details and target job description to get started.
+            </p>
+
+        </section>
+
+
+        <!-- CONTENT -->
+        <div class="grid lg:grid-cols-2 gap-8">
+
+
+            <!-- LEFT FORM -->
+            <section class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm p-6">
+
+                <div class="flex items-center justify-between mb-6">
+
+                    <div>
+                        <h3 class="text-xl font-bold">
+                            ðŸ“ Your Details
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                            Fill in your information
+                        </p>
+                    </div>
+
+                    <span class="text-xs bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                        Step 1
+                    </span>
+
+                </div>
+
+
+                <div class="space-y-5">
+
+
+                    <!-- FULL NAME -->
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-2">
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
+
+                        <input
+                            id="fullName"
+                            type="text"
+                            placeholder="e.g. Devang Sharma"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                    </div>
+
+
+                    <!-- JOB TITLE -->
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-2">
+                            Target Job Title <span class="text-red-500">*</span>
+                        </label>
+
+                        <input
+                            id="jobTitle"
+                            type="text"
+                            placeholder="e.g. Junior Accountant"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                    </div>
+
+
+                    <!-- COMPANY -->
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-2">
+                            Company Name <span class="text-red-500">*</span>
+                        </label>
+
+                        <input
+                            id="companyName"
+                            type="text"
+                            placeholder="e.g. ABC Pvt Ltd"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                    </div>
+
+
+                    <!-- EMAIL + PHONE -->
+                    <div class="grid md:grid-cols-2 gap-4">
+
+                        <div>
+
+                            <label class="block text-sm font-semibold mb-2">
+                                Email
+                            </label>
+
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="you@example.com"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                        </div>
+
+
+                        <div>
+
+                            <label class="block text-sm font-semibold mb-2">
+                                Phone
+                            </label>
+
+                            <input
+                                id="phone"
+                                type="text"
+                                placeholder="+91 XXXXX XXXXX"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-2">
+                            Location
+                        </label>
+
+                        <input
+                            id="location"
+                            type="text"
+                            placeholder="Ahmedabad, India"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500">
+
+                    </div>
+
+
+                    <!-- JOB DESCRIPTION -->
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-2">
+                            Target Job Description
+                        </label>
+
+                        <textarea
+                            id="jobDescription"
+                            rows="8"
+                            placeholder="Paste the job description here..."
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+
+                        <div class="flex justify-between mt-2">
+
+                            <p class="text-xs text-gray-500">
+                                ðŸ’¡ Recommended for a targeted cover letter.
+                            </p>
+
+                            <span
+                                id="charCount"
+                                class="text-xs text-gray-400">
+                                0 characters
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GENERATE -->
+                    <button
+                        id="generateBtn"
+                        onclick="generateCoverLetter()"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition shadow-sm">
+
+                        âœ¨ Generate Cover Letter
+
+                    </button>
+
+
+                    <!-- CLEAR -->
+                    <button
+                        onclick="clearForm()"
+                        class="w-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl transition">
+
+                        ðŸ§¹ Clear Form
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RIGHT PREVIEW -->
+            <section class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-sm p-6">
+
+                <div class="flex items-center justify-between mb-5">
+
+                    <div>
+                        <h3 class="text-xl font-bold">
+                            ðŸ“„ Cover Letter Preview
+                        </h3>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                            Your generated letter
+                        </p>
+                    </div>
+
+                    <button
+                        onclick="copyCoverLetter()"
+                        class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-semibold">
+
+                        ðŸ“‹ Copy
+
+                    </button>
+
+                </div>
+
+
+                <!-- PAPER -->
+                <div
+                    id="coverLetterPreview"
+                    class="letter-paper min-h-[650px] bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 md:p-10 text-gray-800 dark:text-gray-200 leading-7 whitespace-pre-wrap">
+
+                    <div class="min-h-[560px] flex items-center justify-center text-center">
+
+                        <div>
+
+                            <div class="text-6xl mb-5">
+                                âœï¸
+                            </div>
+
+                            <h4 class="text-xl font-bold mb-2">
+                                Your cover letter will appear here
+                            </h4>
+
+                            <p class="text-sm text-gray-500 dark:text-gray-400 max-w-sm">
+                                Enter your details and click
+                                <strong>Generate Cover Letter</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="grid grid-cols-3 gap-3 mt-4">
+
+                    <button
+                        onclick="generateCoverLetter()"
+                        class="border border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 font-semibold py-3 rounded-xl">
+
+                        ðŸ”„ Regenerate
+
+                    </button>
+
+
+                    <button
+                        onclick="copyCoverLetter()"
+                        class="border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold py-3 rounded-xl">
+
+                        ðŸ“‹ Copy
+
+                    </button>
+
+
+                    <button
+                        onclick="downloadCoverLetter()"
+                        class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold py-3 rounded-xl">
+
+                        ðŸ“¥ Download
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+        <section class="grid md:grid-cols-3 gap-6 mt-10">
+
+
+            <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+
+                <div class="text-3xl mb-3">
+                    ðŸŽ¯
+                </div>
+
+                <h4 class="font-bold mb-2">
+                    Job Specific
+                </h4>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Create a cover letter based on the target position and job requirements.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+
+                <div class="text-3xl mb-3">
+                    âš¡
+                </div>
+
+                <h4 class="font-bold mb-2">
+                    Fast & Simple
+                </h4>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Enter your information and generate a professional letter quickly.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+
+                <div class="text-3xl mb-3">
+                    ðŸ’¼
+                </div>
+
+                <h4 class="font-bold mb-2">
+                    Professional
+                </h4>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Clean and professional format suitable for job applications.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+   
+<script>
+async function generateCoverLetter() {
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const jobTitle = document.getElementById("jobTitle").value.trim();
+    const companyName = document.getElementById("companyName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const location = document.getElementById("location").value.trim();
+    const jobDescription = document.getElementById("jobDescription").value.trim();
+
+    if (!fullName || !jobTitle || !companyName) {
+        alert("Please enter Full Name, Job Title and Company Name.");
+        return;
+    }
+
+    const button = document.getElementById("generateBtn");
+
+    if (button) {
+        button.disabled = true;
+        button.textContent = "Generating...";
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:3000/api/generate-cover-letter", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fullName,
+                jobTitle,
+                companyName,
+                email,
+                phone,
+                location,
+                jobDescription
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.error || "Failed to generate cover letter.");
+        }
+
+        const preview = document.getElementById("coverLetterPreview");
+
+        if (preview) {
+            preview.innerText = data.coverLetter || "No cover letter was returned.";
+        }
+
+    } catch (error) {
+
+        console.error("Cover Letter Error:", error);
+        alert("Could not generate cover letter: " + error.message);
+
+    } finally {
+
+        if (button) {
+            button.disabled = false;
+            button.textContent = "Generate Cover Letter";
+        }
+    }
+}
+
+
+function copyCoverLetter() {
+
+    const preview = document.getElementById("coverLetterPreview");
+
+    if (!preview || !preview.innerText.trim()) {
+        alert("Please generate a cover letter first.");
+        return;
+    }
+
+    navigator.clipboard.writeText(preview.innerText)
+        .then(() => {
+            alert("Cover letter copied successfully!");
+        })
+        .catch(() => {
+            alert("Could not copy the cover letter.");
+        });
+}
+
+
+function downloadCoverLetter() {
+
+    const preview = document.getElementById("coverLetterPreview");
+
+    if (!preview || !preview.innerText.trim()) {
+        alert("Please generate a cover letter first.");
+        return;
+    }
+
+    const blob = new Blob(
+        [preview.innerText],
+        { type: "text/plain;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Devang-Sharma-Cover-Letter.txt";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
+```

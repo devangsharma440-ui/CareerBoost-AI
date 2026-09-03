@@ -1,0 +1,1954 @@
+﻿<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBoost AI - Your AI Career Partner</title>
+    <meta name="description"
+        content="Build professional resumes, generate job emails, prepare for interviews, and improve accounting skills with CareerBoost AI.">
+    <meta name="keywords" content="AI Resume Builder, Career Guidance, Interview Prep, Accounting Skills, GST Learning">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+      /* Resume Preview - Always Light */
+#resume-preview {
+    background: #ffffff !important;
+    color: #111827 !important;
+    color-scheme: light !important;
+}
+
+#resume-preview * {
+    color: inherit;
+}
+
+#resume-preview h1,
+#resume-preview h2,
+#resume-preview h3,
+#resume-preview h4,
+#resume-preview p,
+#resume-preview span,
+#resume-preview li {
+    color: #111827 !important;
+}
+
+#resume-preview .text-blue-600 {
+    color: #2563eb !important;
+}
+
+#resume-preview .text-gray-900 {
+    color: #111827 !important;
+}
+
+#resume-preview .text-gray-700 {
+    color: #374151 !important;
+}
+
+#resume-preview .text-gray-600 {
+    color: #4b5563 !important;
+}
+
+#resume-preview .border-b-2 {
+    border-color: #2563eb !important;
+}
+
+#resume-preview .border-b {
+    border-color: #d1d5db !important;
+}
+    </style>
+    <style>
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #resume-preview,
+    #resume-preview * {
+        visibility: visible;
+    }
+
+    #resume-preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-gray-200 dark:border-slate-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <div
+                    class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">CareerBoost<span
+                        class="text-brand-600 dark:text-brand-500">AI</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Home</a>
+                <a href="#resume"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Resume
+                    Builder</a>
+                <a href="#jobs"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Jobs</a>
+                <a href="#tools"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">AI
+                    Tools</a>
+                <a href="#learning"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Learn</a>
+                <a href="#interview"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Interview</a>
+            </div>
+
+            <!-- Search & Actions -->
+            <div class="flex items-center space-x-4">
+                <!-- Search Bar -->
+                <div class="hidden sm:block relative">
+                    <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" placeholder="Search resources..."
+                        class="w-40 lg:w-64 pl-9 pr-4 py-1.5 text-sm bg-gray-100 dark:bg-slate-800 border-none rounded-full focus:ring-2 focus:ring-brand-500 outline-none transition-all">
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors"
+                    aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-yellow-500 hidden dark:block"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800 rounded-lg"
+                    aria-label="Open Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 py-4 px-4 space-y-3">
+            <a href="#"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Home</a>
+            <a href="#services"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Services</a>
+            <a href="#articles"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Articles</a>
+            <a href="#tools"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Tools</a>
+            <a href="#accounting"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Accounting</a>
+            <a href="#interview"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Interview</a>
+            <div class="pt-2">
+                <div class="relative">
+                    <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" placeholder="Search..."
+                        class="w-full pl-9 pr-4 py-2 text-sm bg-gray-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <!-- Hero Section -->
+<!-- Resume Builder Hero -->
+<section class="bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+
+        <div class="inline-flex items-center px-5 py-2 rounded-full bg-white/10 text-white border border-white/20 text-sm font-medium">
+            &#128196; AI-Powered Resume Builder
+        </div>
+
+        <h1 class="mt-6 text-5xl md:text-6xl font-extrabold text-white leading-tight">
+            Build Your
+            <span class="text-yellow-300">Professional Resume</span>
+            With AI &#128640;
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-8">
+            Create an ATS-friendly resume, showcase your skills,
+            and make a strong first impression with CareerBoost AI.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+
+            <a href="#resume-form"
+                class="bg-white text-blue-700 px-8 py-4 rounded-xl font-bold shadow-lg hover:scale-105 transition">
+                &#128640; Create My Resume
+            </a>
+
+            <a href="#resume-preview"
+                class="border border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-700 transition">
+                &#128065; View Preview
+            </a>
+
+        </div>
+
+    </div>
+</section>
+<!-- Resume Builder -->
+<section id="resume-builder" class="py-16 bg-gray-50 dark:bg-slate-900">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-semibold">
+                &#128196; Free AI Resume Builder
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-4">
+                Build Your Professional Resume
+            </h2>
+
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                Enter your details and create a professional resume in minutes.
+            </p>
+        </div>
+
+        <!-- Builder -->
+        <div class="grid lg:grid-cols-2 gap-8">
+
+            <!-- LEFT: FORM -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 md:p-8">
+
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                    Enter Your Details
+                </h3>
+
+                <div class="space-y-5">
+
+                    <!-- Name -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Full Name
+                        </label>
+                        <input id="rb-name" type="text"
+                            placeholder="e.g. Devang Sharma"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 dark:text-white bg-white dark:bg-slate-800 placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Job Title -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Job Title
+                        </label>
+                        <input id="rb-title" type="text"
+                            placeholder="e.g. Account Executive"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Email
+                        </label>
+                        <input id="rb-email" type="email"
+                            placeholder="your@email.com"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Phone
+                        </label>
+                        <input id="rb-phone" type="text"
+                            placeholder="+91 XXXXX XXXXX"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Location -->
+                   <div>
+    <label class="block text-sm font-medium mb-2">
+        Location
+    </label>
+    <input
+        type="text"
+        id="rb-location"
+        placeholder="Ahmedabad, Gujarat"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none"
+    >
+</div>
+
+<div>
+    <label class="block text-sm font-medium mb-2">
+        LinkedIn Profile
+    </label>
+    <input
+        type="url"
+        id="rb-linkedin"
+        placeholder="https://linkedin.com/in/yourname"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none"
+    >
+</div>
+                        
+                    </div>
+                    <div>
+    <label class="block text-sm font-medium mb-2">
+        GitHub Profile
+    </label>
+    <input
+        type="url"
+        id="rb-github"
+        placeholder="https://github.com/yourname"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none"
+    >
+</div>
+
+<div>
+    <label class="block text-sm font-medium mb-2">
+        Portfolio Website
+    </label>
+    <input
+        type="url"
+        id="rb-portfolio"
+        placeholder="https://yourportfolio.com"
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none"
+    >
+</div>
+
+                    <!-- Education -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Education
+                        </label>
+                        <textarea id="rb-education" rows="3"
+                            placeholder="B.Com - Gujarat University&#10;12th - Commerce"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 dark:bg-slate-800 dark:border-slate-600 dark:text-white focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Skills
+                        </label>
+                        <textarea id="rb-skills" rows="3"
+                            placeholder="Tally Prime, Excel, GST, TDS, Accounting"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Experience -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Experience
+                        </label>
+                        <textarea id="rb-experience" rows="4"
+                            placeholder="Write your experience, internship or fresher status..."
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+<!-- Target Job Description -->
+<div>
+    <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+        Target Job Description
+    </label>
+
+    <textarea
+        id="rb-job-description"
+        rows="6"
+        placeholder="Paste the job description here to improve your ATS match..."
+        class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500"
+    ></textarea>
+
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+        &#128161; Paste the job description of the position you're applying for.
+    </p>
+</div>
+                    <!-- Summary -->
+                    <div>
+                        <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-200">
+                            Professional Summary
+                        </label>
+                        <textarea id="rb-summary" rows="4"
+                            placeholder="Write a short professional summary..."
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-3">
+
+                        <button type="button" onclick="generateResume()"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition">
+                            &#10024; Generate Resume
+                        </button>
+<button type="button" onclick="downloadResume()"
+    class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl">
+    &#128229; Download PDF
+</button>
+<button
+    type="button"
+    onclick="checkATSScore()"
+    class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl">
+    &#128202; Check ATS Score
+</button>
+<div id="ats-result"
+    class="hidden mt-6 p-6 rounded-2xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700">
+
+    <div class="text-center">
+        <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">
+            ATS RESUME SCORE
+        </div>
+
+        <div id="ats-score"
+            class="text-5xl font-extrabold text-blue-600 mt-2">
+            0/100
+        </div>
+
+        <p id="ats-message"
+            class="mt-3 text-gray-600 dark:text-gray-300">
+            Complete your resume to check your ATS readiness.
+        </p>
+    </div>
+
+    <div class="mt-5">
+        <div class="flex justify-between text-sm mb-2">
+            <span>ATS Readiness</span>
+            <span id="ats-percentage">0%</span>
+        </div>
+
+        <div class="w-full h-3 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div id="ats-progress"
+                class="h-full bg-blue-600 rounded-full"
+                style="width: 0%;">
+            </div>
+        </div>
+    </div>
+
+    <div id="ats-suggestions"
+        class="mt-5 text-sm text-gray-700 dark:text-gray-300">
+    </div>
+
+</div>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT: PREVIEW -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+
+                <div id="resume-preview">
+
+                    <div class="border-b-2 border-blue-600 pb-5 mb-5">
+
+                        <h1 id="preview-name"
+                            class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                            Your Name
+                        </h1>
+
+                        <p id="preview-title"
+                            class="text-xl text-blue-600 font-semibold mt-1">
+                            Your Job Title
+                        </p>
+
+                        <p class="text-sm text-gray-600 mt-3">
+                            <span id="preview-email">email@example.com</span>
+                            &middot;
+                            <span id="preview-phone">+91 XXXXX XXXXX</span>
+                            &middot;
+                            <span id="preview-location">Your Location</span>
+                            <span id="preview-linkedin"></span>
+                            <span id="preview-github"></span>
+                            <span id="preview-portfolio"></span>
+                        </p>
+
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-blue-600 border-b pb-2">
+                            PROFESSIONAL SUMMARY
+                        </h3>
+
+                        <p id="preview-summary" class="text-gray-700 mt-3 leading-7">
+                            Your professional summary will appear here.
+                        </p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-blue-600 border-b pb-2">
+                            EDUCATION
+                        </h3>
+
+                        <p id="preview-education"
+                            class="text-gray-700 mt-3 whitespace-pre-line leading-7">
+                            Your education details will appear here.
+                        </p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-blue-600 border-b pb-2">
+                            SKILLS
+                        </h3>
+
+                        <p id="preview-skills"
+                            class="text-gray-700 mt-3 whitespace-pre-line leading-7">
+                            Your skills will appear here.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-blue-600 border-b pb-2">
+                            EXPERIENCE
+                        </h3>
+
+                        <p id="preview-experience"
+                            class="text-gray-700 mt-3 whitespace-pre-line leading-7">
+                            Your experience will appear here.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+function generateResume() {
+
+    document.getElementById("preview-name").textContent =
+        document.getElementById("rb-name").value || "Your Name";
+
+    document.getElementById("preview-title").textContent =
+        document.getElementById("rb-title").value || "Your Job Title";
+
+    document.getElementById("preview-email").textContent =
+        document.getElementById("rb-email").value || "email@example.com";
+
+    document.getElementById("preview-phone").textContent =
+        document.getElementById("rb-phone").value || "+91 XXXXX XXXXX";
+
+    document.getElementById("preview-location").textContent =
+        document.getElementById("rb-location").value || "Your Location";
+const linkedin = document.getElementById("rb-linkedin").value.trim();
+
+const linkedinPreview = document.getElementById("preview-linkedin");
+
+if (linkedin) {
+    linkedinPreview.textContent = " | LinkedIn: " + linkedin.replace(/^https?:\/\//, "");
+    linkedinPreview.style.display = "inline";
+} else {
+    linkedinPreview.textContent = "";
+    linkedinPreview.style.display = "none";
+}
+const github = document.getElementById("rb-github").value.trim();
+const githubPreview = document.getElementById("preview-github");
+
+if (github) {
+    githubPreview.textContent = " | GitHub: " + github.replace(/^https?:\/\//, "");
+    githubPreview.style.display = "inline";
+} else {
+    githubPreview.textContent = "";
+    githubPreview.style.display = "none";
+}
+
+const portfolio = document.getElementById("rb-portfolio").value.trim();
+const portfolioPreview = document.getElementById("preview-portfolio");
+
+if (portfolio) {
+    portfolioPreview.textContent = " | Portfolio: " + portfolio.replace(/^https?:\/\//, "");
+    portfolioPreview.style.display = "inline";
+} else {
+    portfolioPreview.textContent = "";
+    portfolioPreview.style.display = "none";
+}
+    document.getElementById("preview-summary").textContent =
+        document.getElementById("rb-summary").value ||
+        "Your professional summary will appear here.";
+
+    document.getElementById("preview-education").textContent =
+        document.getElementById("rb-education").value ||
+        "Your education details will appear here.";
+
+    document.getElementById("preview-skills").textContent =
+        document.getElementById("rb-skills").value ||
+        "Your skills will appear here.";
+
+    document.getElementById("preview-experience").textContent =
+        document.getElementById("rb-experience").value ||
+        "Your experience will appear here.";
+
+}
+</script>
+  <!-- Trust Bar -->
+<section class="bg-white dark:bg-slate-800 border-y border-gray-200 dark:border-slate-700 py-6">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+            <div>
+                <i class="fa-solid fa-user-graduate text-brand-600 text-3xl mb-2"></i>
+                <h3 class="font-bold text-2xl">10,000+</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Students</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-file-lines text-brand-600 text-3xl mb-2"></i>
+                <h3 class="font-bold text-2xl">500+</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Interview Questions</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-robot text-brand-600 text-3xl mb-2"></i>
+                <h3 class="font-bold text-2xl">15+</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">AI Career Tools</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-award text-brand-600 text-3xl mb-2"></i>
+                <h3 class="font-bold text-2xl">100%</h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Free Platform</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section class="py-20 bg-gray-50 dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
+                Why Choose CareerBoost AI?
+            </h2>
+
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Everything you need to build your career in one place.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <i class="fa-solid fa-file-lines text-4xl text-blue-600 mb-5"></i>
+                <h3 class="text-xl font-bold mb-3">ATS Resume Builder</h3>
+                <p>Create professional resumes that pass ATS screening.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <i class="fa-solid fa-robot text-4xl text-purple-600 mb-5"></i>
+                <h3 class="text-xl font-bold mb-3">AI Career Assistant</h3>
+                <p>Get AI-powered guidance for interviews and career growth.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
+                <i class="fa-solid fa-briefcase text-4xl text-green-600 mb-5"></i>
+                <h3 class="text-xl font-bold mb-3">Job Preparation</h3>
+                <p>Practice interview questions and improve your confidence.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+        <!-- About Us -->
+        <section id="about" class="py-16 bg-slate-100 dark:bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                        About CareerBoost AI
+                    </h2>
+
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        CareerBoost AI is a free career platform created for students, freshers,
+                        and job seekers. We help you build professional resumes, prepare for
+                        interviews, improve accounting skills, and grow your career with AI.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div
+    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+    <div
+        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+        <i class="fa-solid fa-bullseye text-3xl"></i>
+    </div>
+
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        Our Mission
+    </h3>
+
+    <p class="text-gray-600 dark:text-gray-300 leading-7">
+        Help every student, fresher, and job seeker secure their dream career through AI-powered tools, practical learning, and industry-ready guidance.
+    </p>
+
+</div>
+
+                    <div
+    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+    <!-- Icon -->
+    <div
+        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+        <i class="fa-solid fa-graduation-cap text-3xl"></i>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        What We Offer
+    </h3>
+
+    <!-- Description -->
+    <p class="text-gray-600 dark:text-gray-300 leading-7">
+        AI Resume Builder, Interview Preparation, Accounting & Taxation Learning, Excel Training, AI Career Tools, and complete guidance to help you become job-ready.
+    </p>
+
+</div>
+
+                    <div
+    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+    <!-- Icon -->
+    <div
+        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+        <i class="fa-solid fa-rocket text-3xl"></i>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        Our Vision
+    </h3>
+
+    <!-- Description -->
+    <p class="text-gray-600 dark:text-gray-300 leading-7">
+        To become India's most trusted AI-powered career platform, helping millions of students and professionals build successful careers through practical learning and modern technology.
+    </p>
+
+</div>
+
+                </div>
+            </div>
+            <!-- Statistics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+
+    <div class="text-center">
+        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
+            10,000+
+        </h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+            Students Helped
+        </p>
+    </div>
+
+    <div class="text-center">
+        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
+            500+
+        </h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+            Interview Questions
+        </p>
+    </div>
+
+    <div class="text-center">
+        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
+            24/7
+        </h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+            AI Career Support
+        </p>
+    </div>
+
+</div>
+        </section>
+        <!-- Featured Services -->
+        <section id="services" class="py-16 bg-white dark:bg-slate-800 transition-colors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        CareerBoost AI Services
+                    </h2>
+
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                        Everything you need to build your career in one place Ã¢â‚¬â€ AI Resume Builder, Jobs, Accounting &
+                        Taxation Learning, Interview Preparation and AI Career Tools.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+                <div
+    class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+
+    <div
+        class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+    </div>
+
+    <div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+            AI Cover Letter
+        </h3>
+
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+            Generate professional cover letters using AI in seconds.
+        </p>
+    </div>
+
+</div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-file-pdf text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                        ATS Resume Templates
+                    </h3>
+
+<p class="text-sm text-gray-500 dark:text-gray-400">
+    Download ATS-friendly resume templates for freshers & professionals.
+</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-paper-plane text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Job Email Generator</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Craft perfect application emails.</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-comments text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">HR Interview Questions</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Common questions & winning answers.</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-calculator text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Accounting Prep</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Master finance & accounting interviews.</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-receipt text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">GST & TDS Learning</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Practical guides for tax compliance.</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-table text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Excel for Accountants</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Advanced formulas & shortcuts.</p>
+                </div>
+            </div>
+            <div
+                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
+                    <i class="fa-solid fa-user-tie text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">AI Career Assistant</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">24/7 guidance for your career path.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Latest Career Articles -->
+        <section id="articles" class="py-16 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Latest Career Articles</h2>
+                        <p class="text-gray-600 dark:text-gray-400">Stay updated with industry trends & tips.</p>
+                    </div>
+                    <a href="#"
+                        class="hidden sm:inline-flex items-center text-brand-600 dark:text-brand-400 font-medium hover:underline">View
+                        All <i class="fa-solid fa-arrow-right ml-2 text-sm"></i></a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80"
+                                alt="Team meeting"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Interview</span>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
+                                Top 10 HR Questions in 2024</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Learn how to answer
+                                behavioral questions confidently and land your dream job.</p>
+                            <a href="#"
+                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
+                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        </div>
+                    </article>
+                    <article
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
+                                alt="Resume on desk"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Resume</span>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
+                                How to Write an ATS-Friendly Resume</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Beat the bots and
+                                ensure your resume reaches human recruiters with these tips.</p>
+                            <a href="#"
+                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
+                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        </div>
+                    </article>
+                    <article
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
+                                alt="Accounting"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Accounting</span>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
+                                GST Filing Made Easy for Freshers</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">A step-by-step guide
+                                to understanding GST returns and compliance.</p>
+                            <a href="#"
+                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
+                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Tools -->
+        <section id="tools" class="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                        CareerBoost AI Services
+                    </h2>
+
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Everything you need to build your career in one place Ã¢â‚¬â€ AI Resume Builder, Jobs, Accounting &
+                        Taxation Learning, Interview Preparation and AI Career Tools.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-file-circle-check text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Resume Score
+                            Checker</span>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-money-bill-trend-up text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Salary
+                            Calculator</span>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-percent text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">GST
+                            Calculator</span>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-divide text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Percentage
+                            Calc</span>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-building-columns text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">EMI
+                            Calculator</span>
+                    </a>
+                    <a href="#"
+                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
+                        <i
+                            class="fa-solid fa-clock-rotate-left text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Notice
+                            Period</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accounting Learning Hub -->
+        <section id="accounting" class="py-16 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Accounting Learning Hub</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Master core concepts with our structured notes.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Journal
+                        Entries</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">GST</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">TDS</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">TCS</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Income
+                        Tax</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Balance
+                        Sheet</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Final
+                        Accounts</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Bank
+                        Reconciliation</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Excel</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Tally</a>
+                    <a href="#"
+                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">ERP</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview Preparation -->
+        <section id="interview" class="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Interview Preparation</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Crack any interview with our comprehensive guides.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-users text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">HR Questions</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Behavioral & situational questions.</p>
+                    </a>
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-code text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Technical Questions</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Domain-specific technical rounds.</p>
+                    </a>
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-book text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Accounting Interview</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Finance & accounts core concepts.</p>
+                    </a>
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-receipt text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">GST Interview</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Taxation & GST compliance Q&A.</p>
+                    </a>
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-table-cells text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Excel Interview</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Advanced Excel formulas & tricks.</p>
+                    </a>
+                    <a href="#"
+                        class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
+                        <i class="fa-solid fa-microphone text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Mock Interview</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Practice with AI-powered bots.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Templates -->
+        <section id="resume-builder" class="py-16 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Modern Resume Templates</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Choose a design that fits your industry.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&q=80"
+                                alt="Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <button
+                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
+                                <button
+                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Professional Blue</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512314887352-9d4b4a4c1c1a?auto=format&fit=crop&w=400&q=80"
+                                alt="Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <button
+                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
+                                <button
+                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Minimal Clean</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586281380111-5f0e6c5e3c3b?auto=format&fit=crop&w=400&q=80"
+                                alt="Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <button
+                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
+                                <button
+                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Creative Modern</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80"
+                                alt="Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <button
+                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
+                                <button
+                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Executive Pro</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Resources -->
+        <section class="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Job Resources</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Guides to navigate your job search.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <a href="#"
+                        class="col-span-1 md:col-span-2 p-6 rounded-2xl bg-brand-50 dark:bg-slate-900 border border-brand-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md hover:-translate-y-1 transition-all">
+                        <i class="fa-solid fa-briefcase text-3xl text-brand-600 dark:text-brand-400"></i>
+                        <div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">What Our Users Say</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Join thousands of successful job seekers.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
+                        <i
+                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="User"
+                                class="w-12 h-12 rounded-full border-2 border-brand-100">
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Rahul Sharma</h4>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">Accountant at TCS</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"The GST learning hub and
+                            resume builder helped me land my first job right after college. Highly recommended!"</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
+                        <i
+                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://i.pravatar.cc/150?img=45" alt="User"
+                                class="w-12 h-12 rounded-full border-2 border-brand-100">
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Priya Singh</h4>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">HR Executive</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"The AI cover letter generator
+                            saved me hours of writing. The templates are so clean and professional."</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
+                        <i
+                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="User"
+                                class="w-12 h-12 rounded-full border-2 border-brand-100">
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Amit Patel</h4>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">Financial Analyst</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"Excel interview questions
+                            were spot on. I felt so confident during my technical round thanks to CareerBoost AI."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-16 bg-brand-600 dark:bg-brand-800 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+            </div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
+                <p class="text-brand-100 mb-8">Get weekly career tips, job alerts, and free resources directly in your
+                    inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault();">
+                    <input type="email" required placeholder="Enter your email address"
+                        class="flex-1 px-5 py-3.5 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/30 shadow-inner">
+                    <button type="submit"
+                        class="px-8 py-3.5 rounded-full bg-gray-900 hover:bg-black text-white font-semibold transition-colors shadow-lg">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <a href="#" class="flex items-center space-x-2 mb-4">
+                        <div
+                            class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-sm">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <span class="font-bold text-xl text-gray-900 dark:text-white">CareerBoost<span
+                                class="text-brand-600 dark:text-brand-500">AI</span></span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-sm leading-relaxed">Your AI Career
+                        Partner for Resume, Jobs, Interview & Accounting Skills. Empowering freshers to achieve their
+                        dreams.</p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Company</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Blog</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Resources</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Resume
+                                Builder</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Interview
+                                Questions</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Accounting
+                                Notes</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">AI
+                                Tools</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Legal</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Terms</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Disclaimer</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Career
+                                Roadmap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                <p>&copy; 2024 CareerBoost AI. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium">Login</a>
+                    <a href="#"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium">Register</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-brand-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-brand-700 hover:-translate-y-1 z-50"
+        aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });// Download Resume
+function downloadResume() {
+    const original = document.getElementById("resume-preview");
+
+    if (!original) {
+        alert("Resume preview not found.");
+        return;
+    }
+
+    if (typeof html2canvas === "undefined" || typeof jspdf === "undefined") {
+        alert("PDF generator is still loading. Please refresh the page and try again.");
+        return;
+    }
+
+    html2canvas(original, {
+        backgroundColor: "#ffffff",
+        scale: 2,
+        useCORS: true,
+        logging: false
+    }).then(canvas => {
+
+        const imgData = canvas.toDataURL("image/jpeg", 0.98);
+
+        const pdf = new jspdf.jsPDF({
+            orientation: "portrait",
+            unit: "mm",
+            format: "a4"
+        });
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        const margin = 8;
+        const maxWidth = pageWidth - (margin * 2);
+        const maxHeight = pageHeight - (margin * 2);
+
+        const ratio = Math.min(
+            maxWidth / canvas.width,
+            maxHeight / canvas.height
+        );
+
+        const imgWidth = canvas.width * ratio;
+        const imgHeight = canvas.height * ratio;
+
+        const x = (pageWidth - imgWidth) / 2;
+        const y = margin;
+
+        pdf.addImage(
+            imgData,
+            "JPEG",
+            x,
+            y,
+            imgWidth,
+            imgHeight
+        );
+
+        pdf.save("CareerBoost-AI-Resume.pdf");
+
+    }).catch(error => {
+        console.error("PDF generation error:", error);
+        alert("Could not generate PDF. Please try again.");
+    });
+}
+// ATS Resume Score
+function checkATSScore() {
+
+    const getValue = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : "";
+    };
+
+    const fields = {
+        name: getValue("rb-name"),
+        title: getValue("rb-title"),
+        email: getValue("rb-email"),
+        phone: getValue("rb-phone"),
+        location: getValue("rb-location"),
+        linkedin: getValue("rb-linkedin"),
+        github: getValue("rb-github"),
+        portfolio: getValue("rb-portfolio"),
+        summary: getValue("rb-summary"),
+        education: getValue("rb-education"),
+        skills: getValue("rb-skills"),
+        experience: getValue("rb-experience"),
+        jobDescription: getValue("rb-job-description")
+    };
+
+    let score = 0;
+    let suggestions = [];
+    let missingKeywords = [];
+
+    // -----------------------------
+    // 1. BASIC INFORMATION - 25
+    // -----------------------------
+
+    if (fields.name) score += 5;
+    else suggestions.push("Add your full name.");
+
+    if (fields.title) score += 5;
+    else suggestions.push("Add a clear target job title.");
+
+    if (fields.email) score += 5;
+    else suggestions.push("Add your professional email address.");
+
+    if (fields.phone) score += 5;
+    else suggestions.push("Add your phone number.");
+
+    if (fields.location) score += 5;
+    else suggestions.push("Add your location.");
+
+    // -----------------------------
+    // 2. RESUME CONTENT - 45
+    // -----------------------------
+
+    if (fields.summary.length >= 50) {
+        score += 10;
+    } else {
+        suggestions.push("Write a professional summary of at least 50 characters.");
+    }
+
+    if (fields.education.length >= 20) {
+        score += 10;
+    } else {
+        suggestions.push("Add complete education details.");
+    }
+
+    if (fields.skills.length >= 30) {
+        score += 10;
+    } else {
+        suggestions.push("Add more relevant technical and job-specific skills.");
+    }
+
+    if (fields.experience.length >= 50) {
+        score += 15;
+    } else {
+        suggestions.push("Add experience, internship, projects, or strong fresher details.");
+    }
+
+    // -----------------------------
+    // 3. ONLINE PROFILE - 10
+    // -----------------------------
+
+    if (fields.linkedin) {
+        score += 5;
+    } else {
+        suggestions.push("Add your LinkedIn profile.");
+    }
+
+    if (fields.github) {
+        score += 3;
+    }
+
+    if (fields.portfolio) {
+        score += 2;
+    }
+
+    // -----------------------------
+    // 4. JOB DESCRIPTION MATCH - 20
+    // -----------------------------
+
+    if (fields.jobDescription) {
+
+        const resumeText = (
+            fields.title + " " +
+            fields.summary + " " +
+            fields.skills + " " +
+            fields.education + " " +
+            fields.experience
+        ).toLowerCase();
+
+        const stopWords = new Set([
+            "the", "and", "for", "with", "you", "your",
+            "our", "are", "this", "that", "from", "have",
+            "will", "job", "role", "work", "using", "into",
+            "years", "year", "required", "preferred",
+            "about", "their", "they", "who", "what",
+            "where", "when", "which", "must", "should",
+            "can", "all", "not", "has", "been", "more",
+            "than", "also", "but", "other", "such",
+            "looking", "daily", "candidate", "responsible",
+            "requirements", "degree", "position", "company",
+            "support", "strong", "knowledge", "skills"
+        ]);
+
+        const importantPhrases = [
+            "accounts payable",
+            "accounts receivable",
+            "bank reconciliation",
+            "journal entries",
+            "invoice processing",
+            "financial reporting",
+            "accounting records",
+            "financial statements",
+            "data analysis",
+            "analytical skills",
+            "attention to detail",
+            "communication skills",
+            "accounting principles",
+            "accounting operations",
+            "microsoft excel",
+            "tally prime",
+            "pivot tables",
+            "vlookup",
+            "xlookup"
+        ];
+
+        const usefulKeywords = [
+            "accounting",
+            "accountant",
+            "finance",
+            "reconciliation",
+            "invoice",
+            "invoices",
+            "reporting",
+            "excel",
+            "tally",
+            "gst",
+            "tds",
+            "taxation",
+            "journal",
+            "analytical",
+            "communication",
+            "discrepancies",
+            "records",
+            "commerce"
+        ];
+
+        const normalizedJD = fields.jobDescription
+            .toLowerCase()
+            .replace(/[^a-z0-9+#.\s]/g, " ");
+
+        const matchedPhrases = importantPhrases.filter(phrase =>
+            normalizedJD.includes(phrase) &&
+            resumeText.includes(phrase)
+        );
+
+        const missingPhrases = importantPhrases.filter(phrase =>
+            normalizedJD.includes(phrase) &&
+            !resumeText.includes(phrase)
+        );
+
+        const matchedUsefulKeywords = usefulKeywords.filter(keyword =>
+            normalizedJD.includes(keyword) &&
+            resumeText.includes(keyword)
+        );
+
+        const missingUsefulKeywords = usefulKeywords.filter(keyword =>
+            normalizedJD.includes(keyword) &&
+            !resumeText.includes(keyword)
+        );
+
+        const allATSKeywords = [
+            ...importantPhrases.filter(phrase => normalizedJD.includes(phrase)),
+            ...usefulKeywords.filter(keyword => normalizedJD.includes(keyword))
+        ];
+
+        const matchedATSKeywords = [
+            ...matchedPhrases,
+            ...matchedUsefulKeywords
+        ];
+
+        const uniqueATSKeywords = [...new Set(allATSKeywords)];
+        const uniqueMatchedKeywords = [...new Set(matchedATSKeywords)];
+
+        const keywordMatch = uniqueATSKeywords.length
+            ? Math.round(
+                (uniqueMatchedKeywords.length / uniqueATSKeywords.length) * 100
+            )
+            : 0;
+
+        score += Math.round(keywordMatch * 0.20);
+
+        missingKeywords = [
+            ...missingPhrases,
+            ...missingUsefulKeywords
+        ];
+
+        // Remove duplicate / overlapping keywords
+        missingKeywords = [...new Set(missingKeywords)];
+
+        missingKeywords = missingKeywords.filter((keyword, index, arr) => {
+            return !arr.some((other, otherIndex) =>
+                index !== otherIndex &&
+                other.length > keyword.length &&
+                other.includes(keyword)
+            );
+        }).slice(0, 10);
+
+        if (keywordMatch < 50) {
+            suggestions.push(
+                "Improve your Job Description keyword match by adding relevant skills and keywords."
+            );
+        }
+
+    } else {
+
+        suggestions.push(
+            "Paste the target Job Description to get a personalized ATS keyword match."
+        );
+    }
+
+    // -----------------------------
+    // FINAL SCORE
+    // -----------------------------
+
+    score = Math.min(Math.round(score), 100);
+
+    const result = document.getElementById("ats-result");
+    const scoreElement = document.getElementById("ats-score");
+    const messageElement = document.getElementById("ats-message");
+    const percentageElement = document.getElementById("ats-percentage");
+    const progressElement = document.getElementById("ats-progress");
+    const suggestionsElement = document.getElementById("ats-suggestions");
+
+    if (!result || !scoreElement || !messageElement) {
+        alert("ATS result section could not be found.");
+        return;
+    }
+
+    result.classList.remove("hidden");
+
+    scoreElement.textContent = score + "/100";
+    percentageElement.textContent = score + "%";
+    progressElement.style.width = score + "%";
+
+    // -----------------------------
+    // SCORE MESSAGE
+    // -----------------------------
+
+    if (score >= 85) {
+        messageElement.textContent =
+            "Excellent! Your resume is highly ATS-ready.";
+    } else if (score >= 70) {
+        messageElement.textContent =
+            "Good! Your resume is fairly ATS-ready.";
+    } else if (score >= 50) {
+        messageElement.textContent =
+            "Fair. A few improvements can make your resume stronger.";
+    } else {
+        messageElement.textContent =
+            "Your resume needs improvement before applying.";
+    }
+
+    // -----------------------------
+    // SUGGESTIONS + MISSING KEYWORDS
+    // -----------------------------
+
+    let output = "";
+
+    if (suggestions.length > 0) {
+        output +=
+            "<strong>Suggestions:</strong>" +
+            "<ul class='list-disc ml-5 mt-2'>" +
+            suggestions.map(item => "<li>" + item + "</li>").join("") +
+            "</ul>";
+    }
+
+    if (missingKeywords.length > 0) {
+        output +=
+            "<div class='mt-4'>" +
+            "<strong>Missing Job Keywords:</strong>" +
+            "<div class='flex flex-wrap gap-2 mt-2'>" +
+            missingKeywords.map(keyword =>
+                "<span class='px-2 py-1 bg-red-100 text-red-700 rounded text-sm'>" +
+                keyword +
+                "</span>"
+            ).join("") +
+            "</div>" +
+            "</div>";
+    }
+
+    if (!output) {
+        output =
+            "<strong>Great job!</strong> Your resume has all the major ATS sections.";
+    }
+
+    suggestionsElement.innerHTML = output;
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
