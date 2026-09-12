@@ -1,12 +1,13 @@
-﻿<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerBoost AI - Your AI Career Partner</title>
     <meta name="description"
-        content="Build professional resumes, generate job emails, prepare for interviews, and improve accounting skills with CareerBoost AI.">
-    <meta name="keywords" content="AI Resume Builder, Career Guidance, Interview Prep, Accounting Skills, GST Learning">
+        content="Build ATS-friendly resumes, prepare for interviews, discover matching jobs, and accelerate your career with CareerBoost AI.">
+    <meta name="keywords" content="AI Resume Builder, Job Finder, Interview Prep, ATS Resume, Cover Letter Generator, Career Guidance">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,36 +45,37 @@
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s, color 0.3s;
         }
-    /* CareerBoost AI - Dark Mode Text Fix */
-    .dark body {
-        background-color: #0f172a;
-        color: #e2e8f0;
-    }
 
-    .dark p {
-        color: #cbd5e1;
-    }
+        .dark body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
 
-    .dark h1,
-    .dark h2,
-    .dark h3,
-    .dark h4,
-    .dark h5,
-    .dark h6 {
-        color: #f8fafc;
-    }
+        .dark p {
+            color: #cbd5e1;
+        }
 
-    .dark a {
-        color: inherit;
-    }
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
+            color: #f8fafc;
+        }
 
-    .dark input {
-        color: #f8fafc;
-    }
+        .dark a {
+            color: inherit;
+        }
 
-    .dark input::placeholder {
-        color: #94a3b8;
-    }
+        .dark input {
+            color: #f8fafc;
+        }
+
+        .dark input::placeholder {
+            color: #94a3b8;
+        }
+
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -132,7 +134,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
-      
     </style>
 </head>
 
@@ -142,7 +143,7 @@
     <header class="sticky top-0 z-50 glass-nav border-b border-gray-200 dark:border-slate-700">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center space-x-2 group">
+            <a href="index.html" class="flex items-center space-x-2 group">
                 <div
                     class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-rocket"></i>
@@ -153,31 +154,20 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#"
-                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Home</a>
+                <a href="index.html"
+                    class="text-sm font-semibold text-brand-600 dark:text-brand-400">Home</a>
                 <a href="resume-new.html"
-                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Resume
-                    Builder</a>
-                <a href="#jobs"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Resume Builder</a>
+                <a href="jobs.html"
                     class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Jobs</a>
-                <a href="#tools"
-                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">AI
-                    Tools</a>
-                <a href="#learning"
-                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Learn</a>
-                <a href="#interview"
-                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Interview</a>
+                <a href="interview.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Interview Prep</a>
+                <a href="cover-letter.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Cover Letter</a>
             </div>
 
             <!-- Search & Actions -->
             <div class="flex items-center space-x-4">
-                <!-- Search Bar -->
-                <div class="hidden sm:block relative">
-                    <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                    <input type="text" placeholder="Search resources..."
-                        class="w-40 lg:w-64 pl-9 pr-4 py-1.5 text-sm bg-gray-100 dark:bg-slate-800 border-none rounded-full focus:ring-2 focus:ring-brand-500 outline-none transition-all">
-                </div>
-
                 <!-- Dark Mode Toggle -->
                 <button id="theme-toggle"
                     class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors"
@@ -185,6 +175,12 @@
                     <i class="fa-solid fa-moon text-gray-600 dark:text-gray-300 dark:hidden"></i>
                     <i class="fa-solid fa-sun text-yellow-500 hidden dark:block"></i>
                 </button>
+
+                <!-- CTA -->
+                <a href="resume-new.html"
+                    class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-sm">
+                    <i class="fa-solid fa-file-lines text-xs"></i> Build Resume
+                </a>
 
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn"
@@ -198,317 +194,231 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 py-4 px-4 space-y-3">
-            <a href="#"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Home</a>
-            <a href="#services"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Services</a>
-            <a href="#articles"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Articles</a>
-            <a href="#tools"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Tools</a>
-            <a href="#accounting"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Accounting</a>
-            <a href="#interview"
-                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Interview</a>
-            <div class="pt-2">
-                <div class="relative">
-                    <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                    <input type="text" placeholder="Search..."
-                        class="w-full pl-9 pr-4 py-2 text-sm bg-gray-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
-                </div>
-            </div>
+            <a href="index.html"
+                class="block px-3 py-2 rounded-md text-base font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-slate-800">Home</a>
+            <a href="resume-new.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Resume Builder</a>
+            <a href="jobs.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Jobs</a>
+            <a href="interview.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Interview Prep</a>
+            <a href="cover-letter.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Cover Letter</a>
         </div>
     </header>
 
     <main>
-    <!-- Hero Section -->
-<section id="home"
-    class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 flex items-center py-24">
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 flex items-center py-20 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                    <!-- Left Content -->
+                    <div class="text-center lg:text-left">
+                        <span
+                            class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
+                            🚀 AI-Powered Career Platform
+                        </span>
 
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <h1 class="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
+                            Launch Your
+                            <span class="text-yellow-300">Dream Career</span>
+                            with AI Tools 🚀
+                        </h1>
 
-            <!-- Left Content -->
-            <div class="text-center lg:text-left">
+                        <p class="mt-6 text-lg md:text-xl text-blue-100 leading-8 max-w-xl">
+                            Build ATS-friendly resumes, prepare for interviews, discover matching jobs, and get hired faster — all in one free AI-powered career platform.
+                        </p>
 
-                <span
-                    class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium border border-white/20">
-                    ðŸš€ AI-Powered Career Platform
-                </span>
-
-                <h1 class="mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
-    Launch Your
-    <span class="text-yellow-300">
-        Dream Career
-    </span>
-    with AI-Powered Tools ðŸš€
-</h1>
-
-                <p class="mt-6 text-xl text-blue-100 leading-8 max-w-xl">
-                    Build ATS-friendly resumes, prepare for interviews,
-                    master Accounting & Taxation, and get hired faster â€”
-                    all in one free AI-powered platform.
-                </p>
-
-                <div class="mt-10 flex flex-col sm:flex-row gap-4">
-
-                    <a href="#services"
-    class="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-    ðŸš€ Get Started Free
-</a>
-
-                    <a href="#about"
-    class="border border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Right Side -->
-            <div class="flex justify-center">
-
-                <div
-                    class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
-
-                    <div class="flex items-center justify-between mb-6">
-
-                        <h3 class="text-xl font-bold text-gray-900">
-                            Career Dashboard
-                        </h3>
-
-                        <i class="fa-solid fa-chart-line text-blue-600 text-2xl"></i>
-
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="resume-new.html"
+                                class="bg-white text-blue-700 px-8 py-4 rounded-xl font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+                                🚀 Build Free Resume
+                            </a>
+                            <a href="jobs.html"
+                                class="border border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-700 transition-all duration-300 text-center">
+                                💼 Explore Jobs
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="space-y-5">
-
-                        <div>
-                            <p class="text-sm text-gray-500">Resume Score</p>
-                            <div class="w-full bg-gray-200 rounded-full h-3 mt-2">
-                                <div class="bg-blue-600 h-3 rounded-full w-4/5"></div>
+                    <!-- Right Side: Career Dashboard Card -->
+                    <div class="flex justify-center">
+                        <div class="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md text-gray-900">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-xl font-bold text-gray-900">
+                                    Career Dashboard
+                                </h3>
+                                <i class="fa-solid fa-chart-line text-blue-600 text-2xl"></i>
                             </div>
-                            <p class="text-right text-sm font-semibold mt-1">85%</p>
+
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between text-sm font-semibold text-gray-600 mb-1">
+                                        <span>Resume ATS Score</span>
+                                        <span class="text-blue-600 font-bold">88%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-3">
+                                        <div class="bg-blue-600 h-3 rounded-full w-[88%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-sm font-semibold text-gray-600 mb-1">
+                                        <span>Interview Readiness</span>
+                                        <span class="text-emerald-600 font-bold">80%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-3">
+                                        <div class="bg-emerald-500 h-3 rounded-full w-4/5"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4 pt-4">
+                                    <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                        <h4 class="text-2xl font-bold text-blue-700">100+</h4>
+                                        <p class="text-xs text-gray-600 font-medium mt-1">HR Interview Q&A</p>
+                                    </div>
+
+                                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                                        <h4 class="text-2xl font-bold text-green-700">4</h4>
+                                        <p class="text-xs text-gray-600 font-medium mt-1">Resume Templates</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2">
+                                    <a href="jobs.html"
+                                        class="block w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-center text-sm hover:shadow-lg transition">
+                                        Find Matching Jobs &rarr;
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div>
-                            <p class="text-sm text-gray-500">Interview Readiness</p>
-                            <div class="w-full bg-gray-200 rounded-full h-3 mt-2">
-                                <div class="bg-green-500 h-3 rounded-full w-3/4"></div>
-                            </div>
-                            <p class="text-right text-sm font-semibold mt-1">75%</p>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 pt-4">
-
-                            <div class="bg-blue-50 rounded-xl p-4 text-center">
-                                <h4 class="text-2xl font-bold text-blue-700">500+</h4>
-                                <p class="text-sm text-gray-600">Interview Q&A</p>
-                            </div>
-
-                            <div class="bg-green-50 rounded-xl p-4 text-center">
-                                <h4 class="text-2xl font-bold text-green-700">10K+</h4>
-                                <p class="text-sm text-gray-600">Students</p>
-                            </div>
-
-                        </div>
-
                     </div>
 
                 </div>
-
             </div>
+        </section>
 
-        </div>
+        <!-- Trust Bar -->
+        <section class="bg-white dark:bg-slate-800 border-y border-gray-200 dark:border-slate-700 py-6">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <i class="fa-solid fa-user-graduate text-brand-600 text-3xl mb-2"></i>
+                        <h3 class="font-bold text-2xl">10,000+</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Job Seekers Helped</p>
+                    </div>
 
-    </div>
+                    <div>
+                        <i class="fa-solid fa-file-lines text-brand-600 text-3xl mb-2"></i>
+                        <h3 class="font-bold text-2xl">100+</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Universal Interview Q&A</p>
+                    </div>
 
-</section> 
-  <!-- Trust Bar -->
-<section class="bg-white dark:bg-slate-800 border-y border-gray-200 dark:border-slate-700 py-6">
-    <div class="max-w-7xl mx-auto px-6">
+                    <div>
+                        <i class="fa-solid fa-swatchbook text-brand-600 text-3xl mb-2"></i>
+                        <h3 class="font-bold text-2xl">4</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">ATS Resume Templates</p>
+                    </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-
-            <div>
-                <i class="fa-solid fa-user-graduate text-brand-600 text-3xl mb-2"></i>
-                <h3 class="font-bold text-2xl">10,000+</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Students</p>
+                    <div>
+                        <i class="fa-solid fa-award text-brand-600 text-3xl mb-2"></i>
+                        <h3 class="font-bold text-2xl">100%</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Free Platform</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div>
-                <i class="fa-solid fa-file-lines text-brand-600 text-3xl mb-2"></i>
-                <h3 class="font-bold text-2xl">500+</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Interview Questions</p>
+        <!-- Why Choose Section -->
+        <section class="py-20 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
+                        Why Choose CareerBoost AI?
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Everything you need to accelerate your career in one cohesive, free platform.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                        <i class="fa-solid fa-file-lines text-4xl text-blue-600 mb-5"></i>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">ATS Resume Builder</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Create tailored, ATS-compliant resumes with 4 professional templates, live paper preview, and instant PDF download.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                        <i class="fa-solid fa-briefcase text-4xl text-emerald-600 mb-5"></i>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Smart Job Finder</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Search remote, hybrid, and on-site roles, connect your resume directly to matching jobs, and search top job portals in 1 click.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300 border border-gray-100 dark:border-slate-700">
+                        <i class="fa-solid fa-comments text-4xl text-purple-600 mb-5"></i>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Interview Preparation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Practice 100 universal HR interview questions with sample answers, practical advice, and save your own answers to build confidence.
+                        </p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div>
-                <i class="fa-solid fa-robot text-brand-600 text-3xl mb-2"></i>
-                <h3 class="font-bold text-2xl">15+</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">AI Career Tools</p>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-award text-brand-600 text-3xl mb-2"></i>
-                <h3 class="font-bold text-2xl">100%</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Free Platform</p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-<section class="py-20 bg-gray-50 dark:bg-slate-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-        <div class="text-center mb-14">
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white">
-                Why Choose CareerBoost AI?
-            </h2>
-
-            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Everything you need to build your career in one place.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-
-            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
-                <i class="fa-solid fa-file-lines text-4xl text-blue-600 mb-5"></i>
-                <h3 class="text-xl font-bold mb-3">ATS Resume Builder</h3>
-                <p>Create professional resumes that pass ATS screening.</p>
-            </div>
-
-            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
-                <i class="fa-solid fa-robot text-4xl text-purple-600 mb-5"></i>
-                <h3 class="text-xl font-bold mb-3">AI Career Assistant</h3>
-                <p>Get AI-powered guidance for interviews and career growth.</p>
-            </div>
-
-            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300">
-                <i class="fa-solid fa-briefcase text-4xl text-green-600 mb-5"></i>
-                <h3 class="text-xl font-bold mb-3">Job Preparation</h3>
-                <p>Practice interview questions and improve your confidence.</p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-        <!-- About Us -->
-        <section id="about" class="py-16 bg-slate-100 dark:bg-slate-900">
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-slate-100 dark:bg-slate-900/60 border-t border-gray-200 dark:border-slate-800">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
                         About CareerBoost AI
                     </h2>
-
                     <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        CareerBoost AI is a free career platform created for students, freshers,
-                        and job seekers. We help you build professional resumes, prepare for
-                        interviews, improve accounting skills, and grow your career with AI.
+                        CareerBoost AI is a free career acceleration platform created for students, freshers,
+                        and working professionals to craft ATS-ready resumes, find relevant opportunities,
+                        and ace job interviews.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-md">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6">
+                            <i class="fa-solid fa-bullseye text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Our Mission</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Empower job seekers with modern AI tools, resume templates, and practical interview guidance to secure their target roles with confidence.
+                        </p>
+                    </div>
 
-                    <div
-    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-md">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6">
+                            <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">What We Offer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            AI Resume Builder, Job Finder, Interview Preparation, AI Cover Letter Generator, ATS Score Checker, and seamless career guidance.
+                        </p>
+                    </div>
 
-    <div
-        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
-        <i class="fa-solid fa-bullseye text-3xl"></i>
-    </div>
-
-    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        Our Mission
-    </h3>
-
-    <p class="text-gray-600 dark:text-gray-300 leading-7">
-        Help every student, fresher, and job seeker secure their dream career through AI-powered tools, practical learning, and industry-ready guidance.
-    </p>
-
-</div>
-
-                    <div
-    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-
-    <!-- Icon -->
-    <div
-        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
-        <i class="fa-solid fa-graduation-cap text-3xl"></i>
-    </div>
-
-    <!-- Title -->
-    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        What We Offer
-    </h3>
-
-    <!-- Description -->
-    <p class="text-gray-600 dark:text-gray-300 leading-7">
-        AI Resume Builder, Interview Preparation, Accounting & Taxation Learning, Excel Training, AI Career Tools, and complete guidance to help you become job-ready.
-    </p>
-
-</div>
-
-                    <div
-    class="group bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-
-    <!-- Icon -->
-    <div
-        class="w-16 h-16 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform duration-300">
-        <i class="fa-solid fa-rocket text-3xl"></i>
-    </div>
-
-    <!-- Title -->
-    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        Our Vision
-    </h3>
-
-    <!-- Description -->
-    <p class="text-gray-600 dark:text-gray-300 leading-7">
-        To become India's most trusted AI-powered career platform, helping millions of students and professionals build successful careers through practical learning and modern technology.
-    </p>
-
-</div>
-
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-gray-200 dark:border-slate-700 shadow-md">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6">
+                            <i class="fa-solid fa-rocket text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Our Vision</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            To become the most reliable AI career partner for students and professionals across India and worldwide.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!-- Statistics -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-
-    <div class="text-center">
-        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
-            10,000+
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">
-            Students Helped
-        </p>
-    </div>
-
-    <div class="text-center">
-        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
-            500+
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">
-            Interview Questions
-        </p>
-    </div>
-
-    <div class="text-center">
-        <h3 class="text-4xl font-bold text-brand-600 dark:text-brand-400">
-            24/7
-        </h3>
-        <p class="mt-2 text-gray-600 dark:text-gray-300">
-            AI Career Support
-        </p>
-    </div>
-
-</div>
         </section>
+
         <!-- Featured Services -->
         <section id="services" class="py-16 bg-white dark:bg-slate-800 transition-colors">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -516,193 +426,147 @@
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         CareerBoost AI Services
                     </h2>
-
                     <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                        Everything you need to build your career in one place â€” AI Resume Builder, Jobs, Accounting &
-                        Taxation Learning, Interview Preparation and AI Career Tools.
+                        Everything you need to launch and advance your career in one place.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
-                <div
-    class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
+                    <a href="resume-new.html" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">AI Resume Builder</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Build professional, ATS-friendly resumes in minutes with live paper preview and PDF export.</p>
+                    </a>
 
-    <div
-        class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
-    </div>
+                    <a href="resume-new.html#resume-builder" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-simple text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">ATS Score Checker</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Analyze keyword match against your target job description and get actionable recommendations.</p>
+                    </a>
 
-    <div>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-            AI Cover Letter
-        </h3>
+                    <a href="jobs.html" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-briefcase text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Job Finder</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Discover remote and on-site roles, or launch live searches across LinkedIn and Indeed in 1 click.</p>
+                    </a>
 
-        <p class="text-sm text-gray-500 dark:text-gray-400">
-            Generate professional cover letters using AI in seconds.
-        </p>
-    </div>
+                    <a href="interview.html" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-comments text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Interview Preparation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Practice 100 universal HR, behavioral, situational, and salary questions with model answers.</p>
+                    </a>
 
-</div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-file-pdf text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                        ATS Resume Templates
-                    </h3>
+                    <a href="resume-new.html#template-section" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-swatchbook text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">4 Resume Templates</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Modern Blue, Minimal Monochrome, Executive Classic, and Tech/Creative formats for any industry.</p>
+                    </a>
 
-<p class="text-sm text-gray-500 dark:text-gray-400">
-    Download ATS-friendly resume templates for freshers & professionals.
-</p>
+                    <a href="cover-letter.html" class="group bg-gray-50 dark:bg-slate-900 rounded-2xl p-8 border border-gray-100 dark:border-slate-700 hover:border-brand-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-100 dark:bg-pink-900/40 flex items-center justify-center text-pink-600 dark:text-pink-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-envelope-open-text text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">AI Cover Letter</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">Generate targeted, compelling cover letters tailored specifically to any company and job description.</p>
+                    </a>
                 </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-paper-plane text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Job Email Generator</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Craft perfect application emails.</p>
-                </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-comments text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">HR Interview Questions</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Common questions & winning answers.</p>
-                </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-calculator text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Accounting Prep</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Master finance & accounting interviews.</p>
-                </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-receipt text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">GST & TDS Learning</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Practical guides for tax compliance.</p>
-                </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-table text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">Excel for Accountants</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Advanced formulas & shortcuts.</p>
-                </div>
-            </div>
-            <div
-                class="card-hover bg-gray-50 dark:bg-slate-900 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 flex items-start space-x-4">
-                <div
-                    class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0 shadow-inner">
-                    <i class="fa-solid fa-user-tie text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1">AI Career Assistant</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">24/7 guidance for your career path.</p>
-                </div>
-            </div>
-            </div>
             </div>
         </section>
 
-        <!-- Latest Career Articles -->
-        <section id="articles" class="py-16 bg-gray-50 dark:bg-slate-900">
+        <!-- Modern Resume Templates Showcase -->
+        <section id="resume-builder" class="py-16 bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-end mb-10">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Latest Career Articles</h2>
-                        <p class="text-gray-600 dark:text-gray-400">Stay updated with industry trends & tips.</p>
-                    </div>
-                    <a href="#"
-                        class="hidden sm:inline-flex items-center text-brand-600 dark:text-brand-400 font-medium hover:underline">View
-                        All <i class="fa-solid fa-arrow-right ml-2 text-sm"></i></a>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Professional Resume Templates</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Choose a design that fits your target role and industry.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80"
-                                alt="Team meeting"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Interview</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Template 1 -->
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&q=80"
+                                alt="Modern Blue Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <a href="resume-new.html?template=modern-blue"
+                                    class="w-36 px-4 py-2.5 bg-white text-gray-900 rounded-xl text-xs font-bold hover:bg-gray-100 transition shadow text-center">
+                                    Use Template
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
-                                Top 10 HR Questions in 2024</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Learn how to answer
-                                behavioral questions confidently and land your dream job.</p>
-                            <a href="#"
-                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
-                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Modern Blue</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Classic accent & clean layout</p>
                         </div>
-                    </article>
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
-                                alt="Resume on desk"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Resume</span>
+                    </div>
+
+                    <!-- Template 2 -->
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512314887352-9d4b4a4c1c1a?auto=format&fit=crop&w=400&q=80"
+                                alt="Minimal Monochrome Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <a href="resume-new.html?template=minimal-monochrome"
+                                    class="w-36 px-4 py-2.5 bg-white text-gray-900 rounded-xl text-xs font-bold hover:bg-gray-100 transition shadow text-center">
+                                    Use Template
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
-                                How to Write an ATS-Friendly Resume</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Beat the bots and
-                                ensure your resume reaches human recruiters with these tips.</p>
-                            <a href="#"
-                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
-                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Minimal Monochrome</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">High-density ATS favorite</p>
                         </div>
-                    </article>
-                    <article
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
-                                alt="Accounting"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span
-                                class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Accounting</span>
+                    </div>
+
+                    <!-- Template 3 -->
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80"
+                                alt="Executive Classic Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <a href="resume-new.html?template=executive-classic"
+                                    class="w-36 px-4 py-2.5 bg-white text-gray-900 rounded-xl text-xs font-bold hover:bg-gray-100 transition shadow text-center">
+                                    Use Template
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3
-                                class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
-                                GST Filing Made Easy for Freshers</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">A step-by-step guide
-                                to understanding GST returns and compliance.</p>
-                            <a href="#"
-                                class="text-brand-600 dark:text-brand-400 text-sm font-semibold flex items-center group-hover:underline">Read
-                                More <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Executive Classic</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Centered formal serif styling</p>
                         </div>
-                    </article>
+                    </div>
+
+                    <!-- Template 4 -->
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586281380111-5f0e6c5e3c3b?auto=format&fit=crop&w=400&q=80"
+                                alt="Tech Creative Resume Template"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
+                                <a href="resume-new.html?template=tech-creative"
+                                    class="w-36 px-4 py-2.5 bg-white text-gray-900 rounded-xl text-xs font-bold hover:bg-gray-100 transition shadow text-center">
+                                    Use Template
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
+                            <h3 class="font-bold text-gray-900 dark:text-white text-sm">Tech / Creative</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">Indigo accent border highlight</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -712,307 +576,153 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        CareerBoost AI Services
+                        Quick Career Tools
                     </h2>
-
                     <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        Everything you need to build your career in one place â€” AI Resume Builder, Jobs, Accounting &
-                        Taxation Learning, Interview Preparation and AI Career Tools.
+                        Jump directly into any of our career tools to prepare, apply, and succeed.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    <a href="#"
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <a href="resume-new.html"
                         class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-file-circle-check text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Resume Score
-                            Checker</span>
+                        <i class="fa-solid fa-file-circle-check text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Resume Builder</span>
                     </a>
-                    <a href="#"
+
+                    <a href="resume-new.html#resume-builder"
                         class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-money-bill-trend-up text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Salary
-                            Calculator</span>
+                        <i class="fa-solid fa-chart-simple text-3xl text-indigo-600 dark:text-indigo-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">ATS Score Checker</span>
                     </a>
-                    <a href="#"
+
+                    <a href="jobs.html"
                         class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-percent text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">GST
-                            Calculator</span>
+                        <i class="fa-solid fa-briefcase text-3xl text-emerald-600 dark:text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Job Finder</span>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-divide text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Percentage
-                            Calc</span>
+                        <i class="fa-solid fa-comments text-3xl text-purple-600 dark:text-purple-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Interview Prep</span>
                     </a>
-                    <a href="#"
+
+                    <a href="cover-letter.html"
                         class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-building-columns text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">EMI
-                            Calculator</span>
-                    </a>
-                    <a href="#"
-                        class="flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-slate-900 rounded-2xl border border-gray-100 dark:border-slate-700 hover:border-brand-500 hover:shadow-lg transition-all duration-300 group">
-                        <i
-                            class="fa-solid fa-clock-rotate-left text-3xl text-brand-600 dark:text-brand-400 mb-3 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">Notice
-                            Period</span>
+                        <i class="fa-solid fa-envelope-open-text text-3xl text-pink-600 dark:text-pink-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">AI Cover Letter</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Accounting Learning Hub -->
-        <section id="accounting" class="py-16 bg-gray-50 dark:bg-slate-900">
+        <!-- Interview Preparation Categories -->
+        <section id="interview" class="py-16 bg-gray-50 dark:bg-slate-900 border-t border-gray-100 dark:border-slate-700">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Accounting Learning Hub</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Master core concepts with our structured notes.</p>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Journal
-                        Entries</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">GST</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">TDS</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">TCS</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Income
-                        Tax</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Balance
-                        Sheet</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Final
-                        Accounts</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Bank
-                        Reconciliation</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Excel</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">Tally</a>
-                    <a href="#"
-                        class="px-5 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-slate-700 transition-colors shadow-sm">ERP</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interview Preparation -->
-        <section id="interview" class="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Interview Preparation</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Crack any interview with our comprehensive guides.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Universal HR Interview Practice</h2>
+                    <p class="text-gray-600 dark:text-gray-400">100 questions with model answers, tips, and confidence-building practice.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <a href="#"
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
                         <i class="fa-solid fa-users text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">HR Questions</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Behavioral & situational questions.</p>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">HR & Intro Questions</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Master "Tell me about yourself" and core behavioral questions.</p>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
-                        <i class="fa-solid fa-code text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Technical Questions</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Domain-specific technical rounds.</p>
+                        <i class="fa-solid fa-graduation-cap text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Fresher / Entry-Level</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Prepare confidently for college placements and first job rounds.</p>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
-                        <i class="fa-solid fa-book text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Accounting Interview</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Finance & accounts core concepts.</p>
+                        <i class="fa-solid fa-rocket text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Career & Motivation</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Build strong answers about your 5-year goals and career ambitions.</p>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
-                        <i class="fa-solid fa-receipt text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">GST Interview</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Taxation & GST compliance Q&A.</p>
+                        <i class="fa-solid fa-people-group text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Teamwork & Communication</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Practice conflict resolution and collaboration scenarios.</p>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
-                        <i class="fa-solid fa-table-cells text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Excel Interview</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Advanced Excel formulas & tricks.</p>
+                        <i class="fa-solid fa-lightbulb text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Situational & Behavioral</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Learn how to answer with STAR method under pressure.</p>
                     </a>
-                    <a href="#"
+
+                    <a href="interview.html"
                         class="block p-6 rounded-2xl border border-gray-200 dark:border-slate-700 bg-gradient-to-br from-gray-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-lg hover:border-brand-500 transition-all">
                         <i class="fa-solid fa-microphone text-2xl text-brand-600 dark:text-brand-400 mb-4"></i>
-                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Mock Interview</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Practice with AI-powered bots.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Resume Templates -->
-        <section id="resume-builder" class="py-16 bg-gray-50 dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Modern Resume Templates</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Choose a design that fits your industry.</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=400&q=80"
-                                alt="Resume Template"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
-                                <button
-                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
-                                <button
-                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
-                            </div>
-                        </div>
-                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
-                            <h3 class="font-semibold text-gray-900 dark:text-white">Professional Blue</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1512314887352-9d4b4a4c1c1a?auto=format&fit=crop&w=400&q=80"
-                                alt="Resume Template"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
-                                <button
-                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
-                                <button
-                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
-                            </div>
-                        </div>
-                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
-                            <h3 class="font-semibold text-gray-900 dark:text-white">Minimal Clean</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1586281380111-5f0e6c5e3c3b?auto=format&fit=crop&w=400&q=80"
-                                alt="Resume Template"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
-                                <button
-                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
-                                <button
-                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
-                            </div>
-                        </div>
-                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
-                            <h3 class="font-semibold text-gray-900 dark:text-white">Creative Modern</h3>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="h-64 bg-gray-200 dark:bg-slate-700 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80"
-                                alt="Resume Template"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div
-                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center space-y-3">
-                                <button
-                                    class="w-32 px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-100 transition shadow">Preview</button>
-                                <button
-                                    class="w-32 px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-semibold hover:bg-brand-700 transition shadow">Download</button>
-                            </div>
-                        </div>
-                        <div class="p-4 text-center border-t border-gray-100 dark:border-slate-700">
-                            <h3 class="font-semibold text-gray-900 dark:text-white">Executive Pro</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Job Resources -->
-        <section class="py-16 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-slate-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Job Resources</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Guides to navigate your job search.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                    <a href="#"
-                        class="col-span-1 md:col-span-2 p-6 rounded-2xl bg-brand-50 dark:bg-slate-900 border border-brand-100 dark:border-slate-700 flex items-center space-x-4 hover:shadow-md hover:-translate-y-1 transition-all">
-                        <i class="fa-solid fa-briefcase text-3xl text-brand-600 dark:text-brand-400"></i>
-                        <div>
+                        <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Salary & Closing Questions</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Negotiate expectations and ask winning final questions.</p>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials -->
-        <section class="py-16 bg-gray-50 dark:bg-slate-900">
+        <section class="py-16 bg-white dark:bg-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">What Our Users Say</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Join thousands of successful job seekers.</p>
+                    <p class="text-gray-600 dark:text-gray-400">Join thousands of candidates who transformed their careers.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
-                        <i
-                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+                    <div class="bg-gray-50 dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-200 dark:text-slate-700 text-4xl"></i>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=32" alt="User"
+                            <img src="https://i.pravatar.cc/150?img=32" alt="User Rahul"
                                 class="w-12 h-12 rounded-full border-2 border-brand-100">
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white">Rahul Sharma</h4>
-                                <p class="text-xs text-brand-600 dark:text-brand-400">Accountant at TCS</p>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">Software Engineer</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"The GST learning hub and
-                            resume builder helped me land my first job right after college. Highly recommended!"</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">
+                            "The ATS resume builder and instant PDF download helped me land my first development job right after college. Highly recommended!"
+                        </p>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
-                        <i
-                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+
+                    <div class="bg-gray-50 dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-200 dark:text-slate-700 text-4xl"></i>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=45" alt="User"
+                            <img src="https://i.pravatar.cc/150?img=45" alt="User Priya"
                                 class="w-12 h-12 rounded-full border-2 border-brand-100">
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white">Priya Singh</h4>
-                                <p class="text-xs text-brand-600 dark:text-brand-400">HR Executive</p>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">HR Specialist</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"The AI cover letter generator
-                            saved me hours of writing. The templates are so clean and professional."</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">
+                            "The AI cover letter generator and interview preparation saved me hours of preparation. The templates are clean and modern."
+                        </p>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative hover:shadow-md transition-shadow">
-                        <i
-                            class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-100 dark:text-slate-700 text-4xl"></i>
+
+                    <div class="bg-gray-50 dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 relative">
+                        <i class="fa-solid fa-quote-left absolute top-6 right-6 text-brand-200 dark:text-slate-700 text-4xl"></i>
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="https://i.pravatar.cc/150?img=12" alt="User"
+                            <img src="https://i.pravatar.cc/150?img=12" alt="User Amit"
                                 class="w-12 h-12 rounded-full border-2 border-brand-100">
                             <div>
                                 <h4 class="font-bold text-gray-900 dark:text-white">Amit Patel</h4>
-                                <p class="text-xs text-brand-600 dark:text-brand-400">Financial Analyst</p>
+                                <p class="text-xs text-brand-600 dark:text-brand-400">Data Analyst</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">"Excel interview questions
-                            were spot on. I felt so confident during my technical round thanks to CareerBoost AI."</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm relative z-10">
+                            "The Job Finder combined with the ATS Score Checker was a game-changer. I tailored my keywords and got 3 recruiter callbacks in a week."
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1020,17 +730,14 @@
 
         <!-- Newsletter -->
         <section class="py-16 bg-brand-600 dark:bg-brand-800 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
-            </div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
-                <p class="text-brand-100 mb-8">Get weekly career tips, job alerts, and free resources directly in your
-                    inbox.</p>
-                <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault();">
+                <h2 class="text-3xl font-bold text-white mb-4">Subscribe for Career Insights</h2>
+                <p class="text-brand-100 mb-8">Get weekly career advice, resume tips, and curated job alerts directly in your inbox.</p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing to CareerBoost AI!');">
                     <input type="email" required placeholder="Enter your email address"
-                        class="flex-1 px-5 py-3.5 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/30 shadow-inner">
+                        class="flex-1 px-5 py-3.5 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/30 shadow-inner text-sm">
                     <button type="submit"
-                        class="px-8 py-3.5 rounded-full bg-gray-900 hover:bg-black text-white font-semibold transition-colors shadow-lg">Subscribe</button>
+                        class="px-8 py-3.5 rounded-full bg-gray-900 hover:bg-black text-white font-semibold transition-colors shadow-lg text-sm">Subscribe</button>
                 </form>
             </div>
         </section>
@@ -1041,93 +748,55 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
                 <div class="col-span-2 lg:col-span-2">
-                    <a href="#" class="flex items-center space-x-2 mb-4">
-                        <div
-                            class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-sm">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-sm">
                             <i class="fa-solid fa-rocket"></i>
                         </div>
                         <span class="font-bold text-xl text-gray-900 dark:text-white">CareerBoost<span
                                 class="text-brand-600 dark:text-brand-500">AI</span></span>
                     </a>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-sm leading-relaxed">Your AI Career
-                        Partner for Resume, Jobs, Interview & Accounting Skills. Empowering freshers to achieve their
-                        dreams.</p>
-                    <div class="flex space-x-3">
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
-                                class="fa-brands fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-gray-100 dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-brand-600 hover:text-white transition-colors"><i
-                                class="fa-brands fa-instagram"></i></a>
-                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6 max-w-sm leading-relaxed">
+                        Your focused career partner for ATS Resumes, Job Finding, Interview Practice & AI Cover Letters. Empowering students and professionals to achieve their goals.
+                    </p>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Company</h3>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Platform</h3>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Blog</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Sitemap</a>
-                        </li>
+                        <li><a href="index.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Services</a></li>
+                        <li><a href="jobs.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Job Finder</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Resources</h3>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Tools</h3>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Resume
-                                Builder</a></li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Interview
-                                Questions</a></li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Accounting
-                                Notes</a></li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">AI
-                                Tools</a></li>
+                        <li><a href="resume-new.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Resume Builder</a></li>
+                        <li><a href="resume-new.html#resume-builder" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">ATS Score Checker</a></li>
+                        <li><a href="interview.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Interview Preparation</a></li>
+                        <li><a href="cover-letter.html" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">AI Cover Letter</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Legal</h3>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-4">Templates</h3>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Terms</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Disclaimer</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-gray-500 dark:text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Career
-                                Roadmap</a></li>
+                        <li><a href="resume-new.html?template=modern-blue" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Modern Blue</a></li>
+                        <li><a href="resume-new.html?template=minimal-monochrome" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Minimal Monochrome</a></li>
+                        <li><a href="resume-new.html?template=executive-classic" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Executive Classic</a></li>
+                        <li><a href="resume-new.html?template=tech-creative" class="text-gray-500 dark:text-gray-400 hover:text-brand-600 transition-colors">Tech / Creative</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div
-                class="border-t border-gray-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                <p>&copy; 2024 CareerBoost AI. All rights reserved.</p>
+            <div class="border-t border-gray-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+                <p>&copy; 2026 CareerBoost AI. All rights reserved.</p>
                 <div class="mt-4 md:mt-0 flex space-x-6">
-                    <a href="#"
-                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium">Login</a>
-                    <a href="#"
-                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-medium">Register</a>
+                    <a href="resume-new.html" class="hover:text-brand-600 transition font-medium">Build Resume</a>
+                    <a href="jobs.html" class="hover:text-brand-600 transition font-medium">Find Jobs</a>
+                    <a href="interview.html" class="hover:text-brand-600 transition font-medium">Interview Q&A</a>
                 </div>
             </div>
         </div>
@@ -1146,7 +815,8 @@
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        const savedTheme = localStorage.getItem('careerboost-theme') || localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlElement.classList.add('dark');
         } else {
             htmlElement.classList.remove('dark');
@@ -1154,11 +824,9 @@
 
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
+            const isDark = htmlElement.classList.contains('dark');
+            localStorage.setItem('careerboost-theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
 
         // Mobile Menu Toggle
@@ -1169,7 +837,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu on link click
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');

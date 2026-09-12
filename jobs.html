@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBoost AI - Job Finder & Career Opportunities</title>
+    <meta name="description"
+        content="Discover curated job openings, search remote and on-site opportunities, and connect your resume directly to matching jobs with CareerBoost AI.">
+    <meta name="keywords" content="Job Finder, Remote Jobs, Fresher Jobs, AI Career Platform, Tech Jobs, Apply Jobs">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .dark p {
+            color: #cbd5e1;
+        }
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
+            color: #f8fafc;
+        }
+
+        .dark a {
+            color: inherit;
+        }
+
+        .dark input,
+        .dark select {
+            color: #f8fafc;
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .dark input::placeholder {
+            color: #94a3b8;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.88);
+        }
+
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-gray-200 dark:border-slate-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div
+                    class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">CareerBoost<span
+                        class="text-brand-600 dark:text-brand-500">AI</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Home</a>
+                <a href="resume-new.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Resume Builder</a>
+                <a href="jobs.html"
+                    class="text-sm font-semibold text-brand-600 dark:text-brand-400">Jobs</a>
+                <a href="interview.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Interview Prep</a>
+                <a href="cover-letter.html"
+                    class="text-sm font-medium hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Cover Letter</a>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors"
+                    aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-yellow-500 hidden dark:block"></i>
+                </button>
+
+                <!-- Action CTA -->
+                <a href="resume-new.html"
+                    class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-sm">
+                    <i class="fa-solid fa-file-lines text-xs"></i> Build Resume
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800 rounded-lg"
+                    aria-label="Open Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 py-4 px-4 space-y-3">
+            <a href="index.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Home</a>
+            <a href="resume-new.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Resume Builder</a>
+            <a href="jobs.html"
+                class="block px-3 py-2 rounded-md text-base font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-slate-800">Jobs</a>
+            <a href="interview.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Interview Prep</a>
+            <a href="cover-letter.html"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800">Cover Letter</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 py-16 text-white text-center relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-4">
+                    🎯 Smart Job Finder & Career Match
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                    Find Jobs Matched to <span class="text-yellow-300">Your Skills</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                    Explore curated opportunities across top industries, or launch one-click direct searches across leading job platforms with your target profile.
+                </p>
+
+                <!-- Live Search Summary Banner (Appears when incoming query is detected) -->
+                <div id="active-query-banner" class="hidden mt-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-sm font-medium">
+                    <i class="fa-solid fa-wand-magic-sparkles text-yellow-300"></i>
+                    <span>Filtering jobs for: <strong id="active-role-text" class="text-white"></strong> <span id="active-loc-wrap" class="hidden">in <strong id="active-loc-text" class="text-white"></strong></span></span>
+                    <button onclick="clearSearch()" class="ml-2 text-blue-200 hover:text-white underline text-xs">Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Controls -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 p-5 md:p-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <!-- Keyword / Role Input -->
+                    <div class="md:col-span-4 relative">
+                        <label class="block text-xs font-semibold uppercase text-gray-500 dark:text-gray-400 mb-1">Job Title or Keyword</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-briefcase absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                            <input type="text" id="search-title" placeholder="e.g. Software Engineer, Marketing, Designer..."
+                                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Location Input -->
+                    <div class="md:col-span-3 relative">
+                        <label class="block text-xs font-semibold uppercase text-gray-500 dark:text-gray-400 mb-1">Location / Remote</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-location-dot absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                            <input type="text" id="search-location" placeholder="e.g. Remote, Bangalore, Mumbai..."
+                                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Experience Dropdown -->
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold uppercase text-gray-500 dark:text-gray-400 mb-1">Experience</label>
+                        <select id="filter-experience"
+                            class="w-full px-3 py-2.5 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            <option value="all">All Levels</option>
+                            <option value="fresher">Fresher (0-1 yrs)</option>
+                            <option value="mid">Mid Level (1-4 yrs)</option>
+                            <option value="senior">Senior (4+ yrs)</option>
+                        </select>
+                    </div>
+
+                    <!-- Work Mode Dropdown -->
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold uppercase text-gray-500 dark:text-gray-400 mb-1">Work Mode</label>
+                        <select id="filter-mode"
+                            class="w-full px-3 py-2.5 rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            <option value="all">All Modes</option>
+                            <option value="remote">Remote</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="on-site">On-Site</option>
+                        </select>
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="md:col-span-1 flex items-end">
+                        <button onclick="applyJobFilters()"
+                            class="w-full py-2.5 px-4 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span class="md:hidden">Search</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Quick Pills -->
+                <div class="flex flex-wrap items-center gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-slate-700 text-xs">
+                    <span class="font-semibold text-gray-500 dark:text-gray-400 mr-1">Quick Filters:</span>
+                    <button onclick="setCategoryFilter('all')" class="cat-pill active px-3 py-1.5 rounded-full bg-brand-600 text-white font-medium transition" data-cat="all">All Roles</button>
+                    <button onclick="setCategoryFilter('tech')" class="cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition" data-cat="tech">💻 Tech & Dev</button>
+                    <button onclick="setCategoryFilter('design')" class="cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition" data-cat="design">🎨 Design & Creative</button>
+                    <button onclick="setCategoryFilter('business')" class="cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition" data-cat="business">📈 Marketing & Sales</button>
+                    <button onclick="setCategoryFilter('fresher')" class="cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition" data-cat="fresher">🎓 Fresher Friendly</button>
+                    <button onclick="setCategoryFilter('remote')" class="cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition" data-cat="remote">🌐 100% Remote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Live Search Portals Toolbar -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800/80 rounded-2xl p-5 border border-blue-100 dark:border-slate-700">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-bold text-gray-900 dark:text-white flex items-center gap-2 text-base">
+                            <i class="fa-solid fa-bolt text-brand-600 dark:text-brand-400"></i>
+                            Live Job Board Shortcuts
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">
+                            Search live real-time openings directly on top hiring portals for your entered role and location.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <a id="link-linkedin" href="https://www.linkedin.com/jobs" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0a66c2] hover:bg-[#004182] text-white text-xs font-semibold transition shadow-sm">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a id="link-indeed" href="https://www.indeed.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2164f3] hover:bg-[#124cd4] text-white text-xs font-semibold transition shadow-sm">
+                            <i class="fa-solid fa-magnifying-glass"></i> Indeed
+                        </a>
+                        <a id="link-naukri" href="https://www.naukri.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#008bd3] hover:bg-[#006ca4] text-white text-xs font-semibold transition shadow-sm">
+                            <i class="fa-solid fa-briefcase"></i> Naukri
+                        </a>
+                        <a id="link-google" href="https://www.google.com/search?q=jobs" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-900 dark:bg-slate-700 hover:bg-black text-white text-xs font-semibold transition shadow-sm">
+                            <i class="fa-brands fa-google"></i> Google Jobs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Listings Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Curated Opportunities</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Explore openings with direct resume tailoring support</p>
+                </div>
+                <div class="text-sm font-medium text-gray-600 dark:text-gray-300">
+                    Showing <span id="jobs-count" class="font-bold text-brand-600 dark:text-brand-400">0</span> roles
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="jobs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Job Cards dynamically rendered by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-16 bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 p-8 max-w-lg mx-auto">
+                <div class="w-16 h-16 rounded-full bg-blue-50 dark:bg-slate-700 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">No Matching Roles Found</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    We couldn't find curated roles matching your exact search. Try broader keywords, or search live postings on external portals.
+                </p>
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <button onclick="clearSearch()"
+                        class="px-4 py-2 bg-brand-600 text-white rounded-xl text-sm font-semibold hover:bg-brand-700 transition">
+                        Reset All Filters
+                    </button>
+                    <a id="empty-linkedin-btn" href="https://www.linkedin.com/jobs" target="_blank"
+                        class="px-4 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-xl text-sm font-semibold hover:bg-gray-200 transition">
+                        Search LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Workflow Banner: Connect to Resume Builder & Interview Prep -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white shadow-xl">
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <span class="inline-block px-3 py-1 bg-white/20 text-xs font-semibold rounded-full mb-2">COMPLETE WORKFLOW</span>
+                        <h3 class="text-2xl font-bold">Have an interview lined up?</h3>
+                        <p class="text-blue-100 text-sm mt-1 max-w-xl">
+                            Practice with 100 universal HR interview questions with sample answers, tips, and confidence-building preparation.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 md:justify-end">
+                        <a href="interview.html"
+                            class="px-6 py-3 rounded-xl bg-white text-brand-700 hover:bg-blue-50 font-bold text-sm text-center transition shadow">
+                            🎯 Practice Interview Q&A
+                        </a>
+                        <a href="resume-new.html"
+                            class="px-6 py-3 rounded-xl bg-blue-800/80 hover:bg-blue-800 border border-white/20 text-white font-semibold text-sm text-center transition">
+                            📄 Update Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                <div class="flex items-center space-x-2">
+                    <div class="w-6 h-6 bg-brand-600 rounded flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <span class="font-bold text-gray-900 dark:text-white">CareerBoost AI</span>
+                    <span>&mdash; Your AI Career Partner</span>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="index.html" class="hover:text-brand-600 transition">Home</a>
+                    <a href="resume-new.html" class="hover:text-brand-600 transition">Resume Builder</a>
+                    <a href="jobs.html" class="text-brand-600 font-semibold transition">Jobs</a>
+                    <a href="interview.html" class="hover:text-brand-600 transition">Interview Prep</a>
+                    <a href="cover-letter.html" class="hover:text-brand-600 transition">Cover Letter</a>
+                </div>
+                <p>&copy; 2026 CareerBoost AI. All rights reserved.</p>
+            </div>
+            <p class="text-xs text-gray-400 dark:text-gray-500 text-center mt-6">
+                Disclaimer: CareerBoost AI curates career resources, templates, and interview tools. External job searches redirect to third-party hiring platforms.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-11 h-11 bg-brand-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-brand-700 hover:-translate-y-1 z-50"
+        aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- Job Finder Application Logic -->
+    <script>
+        // Curated Job Openings Dataset
+        const jobsData = [
+            {
+                id: 1,
+                title: "Frontend Developer",
+                company: "Nexlify Tech",
+                location: "Remote",
+                mode: "remote",
+                experience: "fresher",
+                expLabel: "0-1 Years",
+                salary: "₹4.5 - 7 LPA",
+                category: "tech",
+                tags: ["React", "JavaScript", "Tailwind CSS", "HTML5"],
+                description: "Build clean, responsive user interfaces and integrate modern web APIs. Ideal for freshers and early-career frontend enthusiasts with strong fundamentals.",
+                posted: "2 days ago"
+            },
+            {
+                id: 2,
+                title: "Full Stack Software Engineer",
+                company: "CloudScale Systems",
+                location: "Bangalore, India",
+                mode: "hybrid",
+                experience: "mid",
+                expLabel: "1-3 Years",
+                salary: "₹8 - 14 LPA",
+                category: "tech",
+                tags: ["Node.js", "React", "TypeScript", "PostgreSQL"],
+                description: "Work on scalable cloud-native architectures, API development, and responsive web portals with a collaborative product team.",
+                posted: "1 day ago"
+            },
+            {
+                id: 3,
+                title: "UI/UX & Product Designer",
+                company: "Aura Creative Studio",
+                location: "Remote",
+                mode: "remote",
+                experience: "mid",
+                expLabel: "1-4 Years",
+                salary: "₹6 - 11 LPA",
+                category: "design",
+                tags: ["Figma", "UI Design", "Design Systems", "Wireframing"],
+                description: "Design clean user flows, component libraries, and interactive prototypes for consumer and enterprise SaaS applications.",
+                posted: "3 days ago"
+            },
+            {
+                id: 4,
+                title: "Junior Data Analyst",
+                company: "Insight Analytics Corp",
+                location: "Mumbai, India",
+                mode: "hybrid",
+                experience: "fresher",
+                expLabel: "0-2 Years",
+                salary: "₹4.2 - 6.8 LPA",
+                category: "tech",
+                tags: ["Python", "SQL", "Excel", "Data Visualization"],
+                description: "Analyze datasets, build KPI dashboards, and deliver actionable business intelligence for strategic decision-making.",
+                posted: "Just now"
+            },
+            {
+                id: 5,
+                title: "Digital Marketing Specialist",
+                company: "GrowthWave Media",
+                location: "Delhi NCR, India",
+                mode: "on-site",
+                experience: "mid",
+                expLabel: "1-3 Years",
+                salary: "₹5 - 8 LPA",
+                category: "business",
+                tags: ["SEO", "Content Marketing", "Analytics", "Social Media"],
+                description: "Plan and execute multi-channel organic and paid growth campaigns, oversee SEO strategy, and increase lead acquisition.",
+                posted: "4 days ago"
+            },
+            {
+                id: 6,
+                title: "Business Development Associate",
+                company: "Apex Global Solutions",
+                location: "Ahmedabad, India",
+                mode: "on-site",
+                experience: "fresher",
+                expLabel: "0-1 Years",
+                salary: "₹3.8 - 6 LPA",
+                category: "business",
+                tags: ["B2B Sales", "Client Relations", "Communication", "CRM"],
+                description: "Engage prospective clients, generate sales pipelines, and support enterprise growth with a fast-scaling team.",
+                posted: "1 day ago"
+            },
+            {
+                id: 7,
+                title: "DevOps & Cloud Associate",
+                company: "HyperScale Infrastructure",
+                location: "Remote",
+                mode: "remote",
+                experience: "mid",
+                expLabel: "2-4 Years",
+                salary: "₹9 - 16 LPA",
+                category: "tech",
+                tags: ["Docker", "AWS", "CI/CD", "Linux"],
+                description: "Support build pipelines, automated deployments, monitoring, and cloud infrastructure management.",
+                posted: "5 days ago"
+            },
+            {
+                id: 8,
+                title: "HR Operations Specialist",
+                company: "TalentHive Global",
+                location: "Pune, India",
+                mode: "hybrid",
+                experience: "fresher",
+                expLabel: "0-2 Years",
+                salary: "₹3.6 - 5.5 LPA",
+                category: "business",
+                tags: ["Recruitment", "Onboarding", "HR Policies", "Communication"],
+                description: "Assist in talent acquisition cycles, coordinate candidate interviews, and support employee onboarding processes.",
+                posted: "2 days ago"
+            },
+            {
+                id: 9,
+                title: "Financial & Operations Analyst",
+                company: "Vanguard Partners",
+                location: "Bangalore, India",
+                mode: "hybrid",
+                experience: "mid",
+                expLabel: "1-3 Years",
+                salary: "₹6 - 10 LPA",
+                category: "business",
+                tags: ["Financial Modeling", "Reporting", "Excel", "Variance Analysis"],
+                description: "Prepare periodic financial reports, evaluate operational budgets, and track key operational performance metrics.",
+                posted: "3 days ago"
+            },
+            {
+                id: 10,
+                title: "Python Backend Developer",
+                company: "Synapse Logic Labs",
+                location: "Remote",
+                mode: "remote",
+                experience: "senior",
+                expLabel: "3-5+ Years",
+                salary: "₹12 - 20 LPA",
+                category: "tech",
+                tags: ["Python", "FastAPI", "PostgreSQL", "Redis"],
+                description: "Architect high-performance microservices, optimize database queries, and integrate AI inference pipelines.",
+                posted: "1 day ago"
+            },
+            {
+                id: 11,
+                title: "Content & Copywriter",
+                company: "StoryCraft Studio",
+                location: "Remote",
+                mode: "remote",
+                experience: "fresher",
+                expLabel: "0-2 Years",
+                salary: "₹3.6 - 6 LPA",
+                category: "design",
+                tags: ["Copywriting", "Creative Writing", "SEO", "Editing"],
+                description: "Create compelling articles, website copy, and newsletter campaigns that resonate with professional audiences.",
+                posted: "4 days ago"
+            },
+            {
+                id: 12,
+                title: "Associate Product Manager",
+                company: "Elevate Tech Labs",
+                location: "Gurgaon, India",
+                mode: "hybrid",
+                experience: "fresher",
+                expLabel: "0-2 Years",
+                salary: "₹7 - 12 LPA",
+                category: "business",
+                tags: ["Product Roadmap", "User Research", "Agile", "Wireframing"],
+                description: "Collaborate with engineering, design, and marketing to discover user problems and launch impactful software features.",
+                posted: "Just now"
+            }
+        ];
+
+        let currentCategory = "all";
+
+        // Render Job Cards
+        function renderJobs(list) {
+            const grid = document.getElementById("jobs-grid");
+            const emptyState = document.getElementById("empty-state");
+            const countEl = document.getElementById("jobs-count");
+
+            countEl.textContent = list.length;
+
+            if (list.length === 0) {
+                grid.innerHTML = "";
+                emptyState.classList.remove("hidden");
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+
+            grid.innerHTML = list.map(job => {
+                const modeColors = {
+                    remote: "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300",
+                    hybrid: "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300",
+                    "on-site": "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300"
+                };
+
+                const tagsHtml = job.tags.map(t => 
+                    `<span class="px-2.5 py-0.5 rounded-md bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 text-xs font-medium">${t}</span>`
+                ).join("");
+
+                const tailorUrl = `resume-new.html?role=${encodeURIComponent(job.title)}&location=${encodeURIComponent(job.location)}`;
+                const searchLink = `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(job.title + " " + job.company)}`;
+
+                return `
+                    <div class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-3">
+                                <div>
+                                    <span class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">${job.company}</span>
+                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white leading-snug mt-0.5">${job.title}</h3>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${modeColors[job.mode] || 'bg-gray-100 text-gray-700'} capitalize shrink-0">
+                                    ${job.mode}
+                                </span>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-y-1 gap-x-3 text-xs text-gray-500 dark:text-gray-400 mb-3">
+                                <span><i class="fa-solid fa-location-dot mr-1"></i>${job.location}</span>
+                                <span><i class="fa-solid fa-user-clock mr-1"></i>${job.expLabel}</span>
+                                <span><i class="fa-solid fa-wallet mr-1 text-emerald-600"></i>${job.salary}</span>
+                            </div>
+
+                            <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4 line-clamp-3">
+                                ${job.description}
+                            </p>
+
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                ${tagsHtml}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gray-100 dark:border-slate-700 flex items-center gap-2">
+                            <a href="${tailorUrl}"
+                                class="flex-1 py-2 px-3 text-center rounded-xl bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 hover:bg-brand-100 text-xs font-bold transition flex items-center justify-center gap-1.5"
+                                title="Use this role to tailor your resume">
+                                <i class="fa-solid fa-file-pen text-xs"></i> Tailor Resume
+                            </a>
+                            <a href="${searchLink}" target="_blank" rel="noopener noreferrer"
+                                class="flex-1 py-2 px-3 text-center rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Apply / Search
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // Filter Logic
+        function applyJobFilters() {
+            const titleVal = document.getElementById("search-title").value.trim().toLowerCase();
+            const locVal = document.getElementById("search-location").value.trim().toLowerCase();
+            const expVal = document.getElementById("filter-experience").value;
+            const modeVal = document.getElementById("filter-mode").value;
+
+            updatePortalLinks(titleVal, locVal);
+
+            const filtered = jobsData.filter(job => {
+                // Title / Keyword match
+                const matchTitle = !titleVal || 
+                    job.title.toLowerCase().includes(titleVal) ||
+                    job.company.toLowerCase().includes(titleVal) ||
+                    job.tags.some(t => t.toLowerCase().includes(titleVal)) ||
+                    job.description.toLowerCase().includes(titleVal);
+
+                // Location match
+                const matchLoc = !locVal || 
+                    job.location.toLowerCase().includes(locVal) || 
+                    (locVal === "remote" && job.mode === "remote");
+
+                // Experience match
+                const matchExp = expVal === "all" || job.experience === expVal;
+
+                // Mode match
+                const matchMode = modeVal === "all" || job.mode === modeVal;
+
+                // Category match
+                let matchCat = true;
+                if (currentCategory === "tech") matchCat = job.category === "tech";
+                else if (currentCategory === "design") matchCat = job.category === "design";
+                else if (currentCategory === "business") matchCat = job.category === "business";
+                else if (currentCategory === "fresher") matchCat = job.experience === "fresher";
+                else if (currentCategory === "remote") matchCat = job.mode === "remote";
+
+                return matchTitle && matchLoc && matchExp && matchMode && matchCat;
+            });
+
+            renderJobs(filtered);
+        }
+
+        function setCategoryFilter(cat) {
+            currentCategory = cat;
+            document.querySelectorAll(".cat-pill").forEach(p => {
+                if (p.getAttribute("data-cat") === cat) {
+                    p.className = "cat-pill active px-3 py-1.5 rounded-full bg-brand-600 text-white font-medium transition";
+                } else {
+                    p.className = "cat-pill px-3 py-1.5 rounded-full bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-gray-200 font-medium transition";
+                }
+            });
+            applyJobFilters();
+        }
+
+        function clearSearch() {
+            document.getElementById("search-title").value = "";
+            document.getElementById("search-location").value = "";
+            document.getElementById("filter-experience").value = "all";
+            document.getElementById("filter-mode").value = "all";
+            document.getElementById("active-query-banner").classList.add("hidden");
+            currentCategory = "all";
+            setCategoryFilter("all");
+            updatePortalLinks("", "");
+        }
+
+        // Update Live Portal Direct Search Links
+        function updatePortalLinks(role, loc) {
+            const r = role || "jobs";
+            const l = loc || "";
+            const query = encodeURIComponent(r + (l ? (" " + l) : ""));
+
+            document.getElementById("link-linkedin").href = `https://www.linkedin.com/jobs/search/?keywords=${query}`;
+            document.getElementById("link-indeed").href = `https://www.indeed.com/jobs?q=${query}`;
+            document.getElementById("link-naukri").href = `https://www.naukri.com/${encodeURIComponent(r.replace(/\s+/g, '-'))}-jobs${l ? '-in-' + encodeURIComponent(l.replace(/\s+/g, '-')) : ''}`;
+            document.getElementById("link-google").href = `https://www.google.com/search?q=${query}+jobs`;
+            document.getElementById("empty-linkedin-btn").href = `https://www.linkedin.com/jobs/search/?keywords=${query}`;
+        }
+
+        // Initialize from URL parameters (Resume -> Find Jobs Flow)
+        window.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const roleParam = urlParams.get("role") || urlParams.get("title") || "";
+            const locParam = urlParams.get("location") || "";
+
+            if (roleParam) {
+                document.getElementById("search-title").value = roleParam;
+                document.getElementById("active-role-text").textContent = roleParam;
+                document.getElementById("active-query-banner").classList.remove("hidden");
+            }
+
+            if (locParam) {
+                document.getElementById("search-location").value = locParam;
+                document.getElementById("active-loc-text").textContent = locParam;
+                document.getElementById("active-loc-wrap").classList.remove("hidden");
+            }
+
+            applyJobFilters();
+
+            // Dark Mode Init
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+
+            const savedTheme = localStorage.getItem('careerboost-theme') || localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                const isDark = htmlElement.classList.contains('dark');
+                localStorage.setItem('careerboost-theme', isDark ? 'dark' : 'light');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Back to Top
+            const backToTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
