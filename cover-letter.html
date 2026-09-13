@@ -528,7 +528,7 @@ async function generateCoverLetter() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/api/generate-cover-letter", {
+        const response = await fetch("/api/generate-cover-letter", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -649,3 +649,4 @@ function downloadCoverLetter() {
 </script>
 </body>
 </html>
+

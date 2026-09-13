@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { GoogleGenAI } = require("@google/genai");
@@ -10,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve CareerBoost frontend
+app.use(express.static(path.join(__dirname, "..")));
 
 const apiKey = process.env.GEMINI_API_KEY;
 
@@ -125,3 +129,5 @@ Instructions:
 app.listen(PORT, () => {
     console.log(`🚀 CareerBoost AI server running at http://localhost:${PORT}`);
 });
+
+
