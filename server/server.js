@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -15,10 +15,14 @@ app.use(express.json());
 // Serve CareerBoost frontend
 app.use(express.static(path.join(__dirname, "..")));
 
+app.get("/googlef68795e27d999777.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "googlef68795e27d999777.html"));
+});
+
 const apiKey = process.env.GEMINI_API_KEY;
 
 if (!apiKey) {
-    console.log("⚠️ GEMINI_API_KEY is missing.");
+    console.log("âš ï¸ GEMINI_API_KEY is missing.");
 }
 
 const aiClient = new GoogleGenAI({
@@ -127,7 +131,8 @@ Instructions:
 
 // Start Server
 app.listen(PORT, () => {
-    console.log(`🚀 CareerBoost AI server running at http://localhost:${PORT}`);
+    console.log(`ðŸš€ CareerBoost AI server running at http://localhost:${PORT}`);
 });
+
 
 
