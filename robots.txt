@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://careerboost-ai-40tx.onrender.com/sitemap.xml
