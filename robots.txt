@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /resume-new.html
+Allow: /jobs.html
+Allow: /interview.html
+Allow: /cover-letter.html
+Allow: /contact.html
+Disallow: /server/
+Disallow: /api/
 
 Sitemap: https://careerboost-ai-40tx.onrender.com/sitemap.xml

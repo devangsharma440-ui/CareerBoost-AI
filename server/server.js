@@ -1,4 +1,4 @@
-﻿const express = require("express");
+const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -17,6 +17,16 @@ app.use(express.static(path.join(__dirname, "..")));
 
 app.get("/googlef68795e27d999777.html", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "googlef68795e27d999777.html"));
+});
+
+app.get("/robots.txt", (req, res) => {
+    res.type("text/plain");
+    res.sendFile(path.join(__dirname, "..", "robots.txt"));
+});
+
+app.get("/sitemap.xml", (req, res) => {
+    res.type("application/xml");
+    res.sendFile(path.join(__dirname, "..", "sitemap.xml"));
 });
 
 const apiKey = process.env.GEMINI_API_KEY;
